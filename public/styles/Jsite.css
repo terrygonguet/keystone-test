@@ -1,0 +1,57 @@
+*{
+    padding:0px;
+    margin: 0px;
+}
+
+html{
+  height: 100%
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #333333;
+    background-color: #111111;
+
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    grid-template-rows: repeat(3,auto);
+    grid-row-gap: 20px;
+    grid-column-gap: 10px;
+
+    background: url(/images/Hexagrid2000.png), linear-gradient(rgb(97, 0, 255),#111111);
+    background-size: contain;
+  }
+
+  #header{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+  }
+
+  #body{
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+
+  #footer{
+    grid-column-start: 2;
+    grid-row-start: 3;
+  }
+
+  .container{
+    background-color: #e8e8e8;
+    padding: 10px;
+    box-shadow: 1px 1px 2px 1px white;
+    border-radius: 0px 0px 10px 0px;
+  }
+
+  @keyframes sunlight{
+    from {
+      background: radial-gradient(circle at 0% 110px,rgb(255, 129, 0)-1%, rgba(255, 235, 0, 0.55) 5%, rgb(3, 150, 255)15%,rgba(0, 156, 255, 0.28)120%);
+    }
+    to {
+      background: radial-gradient(circle at 100% 110px,rgb(255, 129, 0)-1%, rgba(255, 235, 0, 0.55) 5%, rgb(3, 150, 255)15%,rgba(0, 156, 255, 0.28)120%);
+    }
+  }
