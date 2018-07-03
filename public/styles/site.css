@@ -1,3 +1,5 @@
+/*Importing font here*/
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans");
 #footer {
   margin-top: 30px;
   border-top: 1px solid #eeeeee;
@@ -11,7 +13,8 @@
 
 * {
   padding: 0px;
-  margin: 0px; }
+  margin: 0px;
+  font-family: 'Open Sans', monospace; }
 
 html {
   height: 100%; }
@@ -23,7 +26,7 @@ body {
   color: #333333;
   background-color: #111111;
   display: grid;
-  grid-template-columns: 20% auto 20%;
+  grid-template-columns: 20% auto 1%;
   grid-template-rows: repeat(3, auto);
   grid-row-gap: 20px;
   grid-column-gap: 10px;
@@ -45,9 +48,11 @@ body {
   float: right; }
 
 .navContainer {
-  display: inline-block;
+  display: inline-flex;
   padding: 10px;
-  list-style: none; }
+  list-style: none;
+  background-color: #cccccc;
+  box-shadow: inset 0 0 3px 0 #5501dd, 0 0 3px 0 white; }
 
 .navItems {
   padding: 10px; }
@@ -63,9 +68,39 @@ body {
 .container {
   background-color: #e8e8e8;
   padding: 10px;
-  box-shadow: 1px 1px 2px 1px white;
+  box-shadow: 1px 1px 2px 1px white, -2px -2px 5px 0 #5501dd;
   border-radius: 0px 0px 10px 0px; }
 
+/*Card CSS for about module*/
+.aboutCardWrapper {
+  display: inline-grid;
+  grid-template-columns: 150px 200px;
+  grid-template-rows: 10px min-content min-content min-content 10px;
+  box-shadow: 1px 1px 3px 0;
+  grid-column-gap: 10px; }
+
+.cardImage {
+  height: 200px;
+  grid-row-start: 1;
+  grid-row-end: -1; }
+
+.cardName {
+  background: linear-gradient(to right, #6100ff, #e8e8e8);
+  color: #e8e8e8;
+  padding: 5px;
+  padding-left: 10px;
+  grid-row-start: 2;
+  box-shadow: -1px 1px 3px 0 #676767; }
+
+.cardDescription {
+  background: linear-gradient(to right, #6100ff, #e8e8e8);
+  color: #e8e8e8;
+  padding: 5px;
+  padding-left: 10px;
+  grid-row-start: -3;
+  box-shadow: -1px 1px 3px 0 #676767; }
+
+/*Keyframes are written here !!!!!!!!!!!*/
 @keyframes sunlight {
   from {
     background: radial-gradient(circle at 0% 110px, #fe8000, rgba(255, 235, 0, 0.55) 5%, #0396ff 15%, rgba(0, 156, 255, 0.28) 120%); }
