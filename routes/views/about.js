@@ -9,6 +9,11 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'about';
 
-	// Render the view
-	view.render('about');
+	keystone.list('User').model.find().exec(function (err, users) {
+		if (err) throw err;
+		locals.users = users;
+		// Render the view
+		view.render('about');
+	});
+
 };

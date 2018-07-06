@@ -43,6 +43,11 @@ keystone.set('locals', {
 	editable: keystone.content.editable,
 });
 
+// cloudinary options
+keystone.set('cloudinary prefix', 'keystone');
+keystone.set('cloudinary folders', true);
+keystone.set('cloudinary secure', true);
+
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
