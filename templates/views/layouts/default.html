@@ -38,22 +38,36 @@
 
 			{# Customise your site"s navigation by changing the navLinks Array in ./routes/middleware.js
 			   ... or completely change this header to suit your design. #}
-			<div role="navigation" class="">
+			<div role="navigation" id="trainRail">
 						<ul id="navigationList" class="navContainer">
+								<li>
+									<div id="trainTail" class="trainSide">
+									</div>
+								</li>
 							{% for link in navLinks %}
+								<li>
+										<div class="navItems trainWagon"></div>
+								</li>
 								<li class="{{ 'active' if link.key == section else '' }}">
-									<a class="navItems" href="{{ link.href }}">{{ link.label }}</a>
+										<a class="navItems" href="{{ link.href }}">{{ link.label }}</a>
+								</li>
+								<li>
+										<div class="navItems trainWagon"></div>
 								</li>
 							{% endfor %}
+							<li>
+								<div id="trainHead" class="trainSide">
+								</div>	
+							</li>
 						</ul>
 						<ul id="loginPanel" class="navContainer">
 							{% if user %}
 								{% if user.canAccessKeystone %}
-								<li><a href="/keystone">Open Keystone</a></li>
+								<li><a class="navItems" href="/keystone">Open Keystone</a></li>
 								{% endif %}
-								<li><a href="/keystone/signout">Sign Out</a></li>
+								<li><a class="navItems" href="/keystone/signout">Sign Out</a></li>
 							{% else %}
-								<li><a href="/keystone/signin">Sign In</a></li>
+								<li><a class="navItems" href="/keystone/signin">Sign In</a></li>
 							{% endif %}
 						</ul>
 

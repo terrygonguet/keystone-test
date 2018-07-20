@@ -32,20 +32,21 @@ body {
   grid-column-gap: 10px;
   background: url(/images/HexaScale.png), linear-gradient(#6d00ff, #fff 50%);
   background-size: 13px;
-  animation-name: MagicBreath;
-  animation-iteration-count: infinite;
-  animation-duration: 4s;
-  animation-direction: alternate; }
+  /*commented key frames*/
+  /*animation-name: MagicBreath;
+	animation-iteration-count: infinite;
+	animation-duration: 4s;
+	animation-direction: alternate;*/ }
 
 #header {
   grid-column-start: 1;
   grid-column-end: -1;
   grid-row-start: 1;
   margin-top: 30px;
-  background-color: #11111187;
-  border-bottom: solid #111111 1px;
-  border-top: solid #111111 1px;
-  box-shadow: 0 0 5px 0; }
+  background-color: #b2b2b287;
+  border-bottom: solid #686868 1px;
+  border-top: solid #686868 1px;
+  box-shadow: inset 0 0 5px 0; }
 
 #loginPanel {
   vertical-align: top;
@@ -53,13 +54,37 @@ body {
 
 .navContainer {
   display: inline-flex;
-  padding: 10px;
-  list-style: none;
-  background-color: #cccccc;
-  box-shadow: inset 0 0 3px 0 #5501dd, 0 0 3px 0 white; }
+  list-style: none; }
 
 .navItems {
-  padding: 10px; }
+  padding: 10px;
+  background-color: #f1f1f1;
+  box-shadow: inset 0 0 3px 0 #5501dd, 0 0 3px 0 white;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 5%; }
+
+#trainRail {
+  height: 20px; }
+
+.trainSide {
+  position: relative;
+  bottom: 10px;
+  background-color: #f1f1f1;
+  box-shadow: inset 0 0 3px 0 #5501dd, 0 0 3px 0 white;
+  height: 40px;
+  width: 40px; }
+
+.trainWagon {
+  height: 20px;
+  position: relative;
+  bottom: 10px; }
+
+#trainTail {
+  border-radius: 60% 10% 10% 60%; }
+
+#trainHead {
+  border-radius: 10% 60% 60% 10%; }
 
 #body {
   grid-column-start: 2;
