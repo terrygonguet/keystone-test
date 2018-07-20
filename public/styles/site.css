@@ -30,8 +30,7 @@ body {
   grid-template-rows: repeat(3, auto);
   grid-row-gap: 20px;
   grid-column-gap: 10px;
-  background: url(/images/Hexagrid2000.png), linear-gradient(#6100ff, #111111);
-  background-size: contain; }
+  background: url(/images/HexaScale.png), linear-gradient(#008bff, #5d008a); }
 
 #header {
   grid-column-start: 1;

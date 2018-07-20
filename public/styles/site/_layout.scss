@@ -25,21 +25,17 @@ html{
 }
 
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.42857;
-	color: #333333;
-	background-color: #111111;
-
-	display: grid;
-	grid-template-columns: 20% auto 1%;
-	grid-template-rows: repeat(3,auto);
-	grid-row-gap: 20px;
-	grid-column-gap: 10px;
-	
-
-	background: url(/images/Hexagrid2000.png), linear-gradient(rgb(97, 0, 255),#111111);
-	background-size: contain;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #333333;
+    background-color: #111111;
+    display: grid;
+    grid-template-columns: 20% auto 1%;
+    grid-template-rows: repeat(3, auto);
+    grid-row-gap: 20px;
+    grid-column-gap: 10px;
+    background: url(/images/HexaScale.png), linear-gradient(#008bff, #4a4a4a);
 }
 
 #header{
