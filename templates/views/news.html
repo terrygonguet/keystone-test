@@ -1,0 +1,13 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+<div class="container">
+	{% for article in news %}
+	<div>
+		<h3>{{ article.name }}</h3>
+		<h5>Published : {{ article.publishedAt }}</h5>
+		<div>{{ article.content | safe }}</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
