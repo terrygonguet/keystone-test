@@ -34,8 +34,17 @@ body {
     grid-template-columns: 20% auto 1%;
     grid-template-rows: repeat(3, auto);
     grid-row-gap: 20px;
-    grid-column-gap: 10px;
-    background: url(/images/HexaScale.png), linear-gradient(#008bff, #4a4a4a);
+	grid-column-gap: 10px;
+	
+	background: url(/images/HexaScale.png), linear-gradient(#6d00ff,#fff 50%);
+
+	background-size: 13px;
+	
+	/*commented key frames*/
+	/*animation-name: MagicBreath;
+	animation-iteration-count: infinite;
+	animation-duration: 4s;
+	animation-direction: alternate;*/
 }
 
 #header{
@@ -131,5 +140,14 @@ body {
 	}
 	to {
 		background: radial-gradient(circle at 100% 110px,rgb(255, 129, 0)-1%, rgba(255, 235, 0, 0.55) 5%, rgb(3, 150, 255)15%,rgba(0, 156, 255, 0.28)120%);
+	}
+}
+
+@keyframes MagicBreath{
+	from{
+		background: url(/images/HexaScale.png), linear-gradient(#6d00ff,#fff 50%);
+	}
+	to{
+		background: url(/images/HexaScale.png), linear-gradient(#3200ff,#fff 100%);
 	}
 }
