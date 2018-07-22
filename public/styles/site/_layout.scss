@@ -55,14 +55,11 @@ body {
 	margin-top: 30px;
 
 	background-color: #b2b2b287;
-    border-bottom: solid #686868 1px;
-    border-top: solid #686868 1px;
-    box-shadow: inset 0 0 5px 0;
+	border-bottom: solid #686868 1px;
+	border-top: solid #686868 1px;
+	box-shadow: inset 0 0 5px 0;
 }
 
-#navigationList{
-
-}
 
 #loginPanel{
 	vertical-align: top;
@@ -70,10 +67,20 @@ body {
 }
 
 .navContainer{
-    display: inline-flex;
-    list-style: none;
+	display: inline-flex;
+	list-style: none;
+	position: relative;
 }
 
+#navigationList{
+	li:first-child {
+		border-radius: 60% 10% 10% 60%;
+	}
+
+	li:last-child {
+		border-radius: 10% 60% 60% 10% ;
+	}
+}
 
 .navItems{
 	padding: 10px;
@@ -81,8 +88,8 @@ body {
 	box-shadow: inset 0 0 3px 0 #5501dd, 0 0 3px 0 white;
 
 	margin-left: 1px;
-    margin-right: 1px;
-    border-radius: 5%;
+	margin-right: 1px;
+	border-radius: 5%;
 }
 
 #trainRail{
@@ -104,24 +111,16 @@ body {
 	bottom: 10px;
 }
 
-#trainTail{
-	border-radius: 60% 10% 10% 60%;
-}
-
-#trainHead{
-	border-radius: 10% 60% 60% 10% ;
-}
-
 #body{
-    grid-column-start: 1;
-    grid-column-end: -1;
-    grid-row-start: 2;
+	grid-column-start: 1;
+	grid-column-end: -1;
+	grid-row-start: 2;
 	padding: 20px;
-	
+
 	display: grid;
-    grid-template-columns: 20% auto 1%;
-    grid-row-gap: 20px;
-    grid-column-gap: 10px;
+	grid-template-columns: 20% auto 1%;
+	grid-row-gap: 20px;
+	grid-column-gap: 10px;
 }
 
 #footer{
@@ -131,23 +130,23 @@ body {
 
 .container{
 	grid-column-start: 1;
-    grid-column-end: -1;
+	grid-column-end: -1;
 
-    background-color: #ffffff;
-    padding: 10px;
-    box-shadow: 2px 2px 5px 1px #0000007a;
-    border-radius: 0px 0px 10px 0px;
-    margin-bottom: 15px;
+	background-color: #ffffff;
+	padding: 10px;
+	box-shadow: 2px 2px 5px 1px #0000007a;
+	border-radius: 0px 0px 10px 0px;
+	margin-bottom: 15px;
 }
 
 /*CSS for contact*/
 
 .introContainer{
 	background-color: #ffffff;
-    padding: 10px;
-    box-shadow: 2px 2px 5px 1px #0000007a;
-    border-radius: 0px 0px 10px 0px;
-    margin-bottom: 15px;
+	padding: 10px;
+	box-shadow: 2px 2px 5px 1px #0000007a;
+	border-radius: 0px 0px 10px 0px;
+	margin-bottom: 15px;
 }
 
 .introTitle{
@@ -171,23 +170,23 @@ body {
 .aboutCardWrapper{
 
 	display: inline-grid;
-    grid-template-columns: 150px 200px;
-    grid-template-rows: 10px min-content min-content min-content 10px;
-    box-shadow: 1px 1px 3px 0;
-    grid-column-gap: 10px;
+	grid-template-columns: 150px 200px;
+	grid-template-rows: 10px min-content min-content min-content 10px;
+	box-shadow: 1px 1px 3px 0;
+	grid-column-gap: 10px;
 
 }
 
 .cardImage{
 	height: 200px;
-    grid-row-start: 1;
-    grid-row-end: -1;
+	grid-row-start: 1;
+	grid-row-end: -1;
 }
 
 .cardName{
 	background: linear-gradient(to right, #6100ff, #e8e8e8);
-    color: #e8e8e8;
-    padding: 5px;
+	color: #e8e8e8;
+	padding: 5px;
 	padding-left: 10px;
 	grid-row-start: 2;
 	box-shadow: -1px 1px 3px 0 #676767;
@@ -195,9 +194,9 @@ body {
 
 .cardDescription{
 	background: linear-gradient(to right, #6100ff, #e8e8e8);
-    color: #e8e8e8;
-    padding: 5px;
-    padding-left: 10px;
+	color: #e8e8e8;
+	padding: 5px;
+	padding-left: 10px;
 	grid-row-start: -3;
 	box-shadow: -1px 1px 3px 0 #676767;
 }

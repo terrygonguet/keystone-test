@@ -39,38 +39,15 @@
 			{# Customise your site"s navigation by changing the navLinks Array in ./routes/middleware.js
 			   ... or completely change this header to suit your design. #}
 			<div role="navigation" id="trainRail">
-						<ul id="navigationList" class="navContainer">
-								<li>
-									<div id="trainTail" class="trainSide">
-									</div>
-								</li>
-							{% for link in navLinks %}
-								<li>
-										<div class="navItems trainWagon"></div>
-								</li>
-								<li class="{{ 'active' if link.key == section else '' }}">
-										<a class="navItems" href="{{ link.href }}">{{ link.label }}</a>
-								</li>
-								<li>
-										<div class="navItems trainWagon"></div>
-								</li>
-							{% endfor %}
-							<li>
-								<div id="trainHead" class="trainSide">
-								</div>	
-							</li>
-						</ul>
-						<ul id="loginPanel" class="navContainer">
-							{% if user %}
-								{% if user.canAccessKeystone %}
-								<li><a class="navItems" href="/keystone">Open Keystone</a></li>
-								{% endif %}
-								<li><a class="navItems" href="/keystone/signout">Sign Out</a></li>
-							{% else %}
-								<li><a class="navItems" href="/keystone/signin">Sign In</a></li>
-							{% endif %}
-						</ul>
-
+				<ul id="navigationList" class="navContainer">
+					<li class="trainSide"></li>
+					{% for link in navLinks %}
+					<li class="{{ 'active' if link.key == section else '' }}">
+						<a class="navItems" href="{{ link.href }}">{{ link.label }}</a>
+					</li>
+					{% endfor %}
+					<li class="trainSide"></li>
+				</ul>
 			</div>
 		</div>
 
@@ -96,6 +73,16 @@
 		<div id="footer" class="container">
 			{# You don"t _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it! #}
 			<p>J&T Web is powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a> and they're cool!</p>
+			<p>
+				{% if user %}
+					{% if user.canAccessKeystone %}
+						<a class="" href="/keystone">Open Keystone</a>
+					{% endif %}
+					<a class="" href="/keystone/signout">Sign Out</a>
+				{% else %}
+					<a class="" href="/keystone/signin">Sign In</a>
+				{% endif %}
+			</p>
 		</div>
 
 
@@ -106,10 +93,6 @@
 			you can upgrade to 2.1.4 (also bundled) for better performance. #}
 		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
 
-		{# Customise which Bootstrap javascript files are served by including
-			them specifically here, instead of bootstrap-3.3.5.min.js #}
-		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
-
 		{# The KeystoneJS Content Editor provides support for ks-editable data attributes,
 			which generate links to edit content for users who can access Keystone #}
 		{% if user and user.canAccessKeystone %}
@@ -117,6 +100,7 @@
 		{% endif %}
 
 		{# Add scripts that are globally required by your site here. #}
+		<script src="/js/navbar.js"></script>
 
 		{# Include template-specific javascript files by extending the js block #}
 		{% block js %}{% endblock %}
