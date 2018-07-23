@@ -141,12 +141,15 @@ body {
 
 /*CSS for contact*/
 
+.introWrapper{
+	display: flex;
+}
+
 .introContainer{
 	background-color: #ffffff;
-	padding: 10px;
+	padding: 15px;
 	box-shadow: 2px 2px 5px 1px #0000007a;
-	border-radius: 0px 0px 10px 0px;
-	margin-bottom: 15px;
+	border-radius: 0px 0px 0px 100%;
 }
 
 .introTitle{
@@ -157,12 +160,58 @@ body {
 
 }
 
+#ListenToUsInContact p{
+
+}
+
 .contactFormWrapper{
-	grid-column-start: 2;
+    display: grid;
+    grid-template-columns: 35% auto;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
 }
 
 .contactForm{
+	display: inline-grid;
+	grid-template-columns: 150px minmax(100px,160px) minmax(100px,auto);
+	grid-gap: 10px;
 
+	box-shadow: 1px 1px 5px 0 black;
+	padding: 15px;
+	background-color: #c498ffd6;
+
+}
+
+.contactForm span{
+	font-weight:bolder;
+}
+
+.contactForm textarea{
+	grid-column-start: 2;
+	grid-column-end: -1;
+	height: 150px;
+}
+
+.usualBackground{
+	background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 2px 2px 5px 1px #0000007a;
+}
+
+.bottomProtection{
+	border-radius: 0px 0px 100% 0px;
+}
+.topProtection{
+	border-radius: 0px 100% 0px 0px;
+}
+
+.form-group {
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.introStick{
+	margin-left: 5px;
 }
 
 /*Card CSS for about module*/
@@ -174,7 +223,6 @@ body {
 	grid-template-rows: 10px min-content min-content min-content 10px;
 	box-shadow: 1px 1px 3px 0;
 	grid-column-gap: 10px;
-
 }
 
 .cardImage{
@@ -217,5 +265,15 @@ body {
 	}
 	to{
 		background: url(/images/HexaScale.png), linear-gradient(#3200ff,#fff 100%);
+	}
+}
+
+@keyframes magicBorderRadius{
+	from{
+		border-radius: 0px;
+	}
+
+	to{
+		border-radius: 25px;
 	}
 }

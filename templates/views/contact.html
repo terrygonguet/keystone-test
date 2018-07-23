@@ -1,6 +1,7 @@
 {% extends "layouts/default.html" %}
 
 {% block intro %}
+<div class="introWrapper">
 	<div class="introContainer">
 		<h1 class="introTitle">Contact Us</h1>
 		<div class="introContent">
@@ -8,10 +9,18 @@
 
 		</div>
 	</div>
+	<div class="usualBackground introStick"></div>
+</div>
 {% endblock %}
 
 {% block content %}
-	<div class="container contactFormWrapper">
+	<div class="contactFormWrapper">
+			<div id="ListenToUsInContact" class = "usualBackground">
+				<p>Giving your opinions about our work help us improve in many ways!</p>
+				<p>Or maybe you just want to get in touch with us.</p>
+				<p>Well, in both ways we are eager to here about you.</p>
+				<p>Share your mind !</p>
+			</div>
 		{% if enquirySubmitted %}
 			<h3>Thanks for getting in touch.</h3>
 		{% else %}
@@ -53,5 +62,11 @@
 				
 			</form>
 		{% endif %}
+		<div class = "usualBackground">
+
+			</div>
+		<div class = "usualBackground bottomProtection">
+
+		</div>
 	</div>
 {% endblock %}
