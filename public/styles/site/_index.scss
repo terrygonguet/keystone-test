@@ -1,0 +1,13 @@
+/*CSS for Home Page*/
+#HomePageContainer{
+	display: grid;
+	grid-row-gap: 20px;
+
+	h1{
+		color: $textColorDark1;
+		background: $backgroundDark;
+		font-weight: bolder;
+		display: inline-block;
+		padding: 0 2em;
+	}
+}

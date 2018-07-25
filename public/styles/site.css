@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 Color Chart Dark red Workshop:
 	#111111 Licorice
@@ -16,55 +15,32 @@ Color Chart blue green peace:
 	#A6FFA1 Mint Green
 */
 /*Importing font here*/
-@import url("https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans");
-.gallery-image img {
-  display: block;
-  max-width: 100%;
-  height: auto; }
-
-/*Web général elements*/
-* {
+html {
   padding: 0px;
   margin: 0px;
-  font-family: 'Open Sans', monospace; }
-
-html {
   height: 100%; }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 1.42857;
   color: #111111;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "brand header" "main main" "footer footer";
   background-color: #E0E0E0;
-  background-size: 13px;
-  background-attachment: fixed;
-  height: 100%;
-  /*commented key frames*/
-  /*animation-name: MagicBreath;
-	animation-iteration-count: infinite;
-	animation-duration: 4s;
-	animation-direction: alternate;*/ }
-
-h1 {
-  color: #540b0e; }
+  padding: 0px;
+  margin: 0px;
+  height: 100%; }
 
 a {
-  color: #540b0e; }
-
-a:hover {
-  color: #248232;
-  transform: skew(-10deg); }
-
-a:visited {
-  color: #540b0e; }
-
-a:hover:visited {
-  color: #248232; }
+  color: #111111;
+  font-weight: bold;
+  text-decoration: none; }
+  a:hover, a:visited:hover {
+    color: #F62217; }
+  a:visited {
+    color: #111111; }
 
 #brandWrapper {
   grid-area: brand;
@@ -75,78 +51,55 @@ a:hover:visited {
 
 /*CSS for header + nav bar*/
 #header {
-  grid-row-start: 2;
   grid-area: header;
   background-color: #111111;
   display: inline-flex;
   align-items: flex-end; }
-
-#loginPanel {
-  vertical-align: top;
-  float: right; }
-
-.navContainer {
-  display: inline-flex;
-  list-style: none;
-  position: relative; }
-
-#navigationList {
-  left: 2%; }
-  #navigationList li:first-child {
-    border-radius: 60% 10% 10% 60%; }
-  #navigationList li:last-child {
-    border-radius: 10% 60% 60% 10%; }
-
-.navItems {
-  padding: 10px;
-  font-weight: bold;
-  text-decoration: none; }
-
-.navItems a {
-  color: #E0E0E0; }
-
-#trainRail {
-  padding: 20px;
-  font-size: 1.3em; }
-
-.trainSide {
-  position: relative;
-  bottom: 10px;
-  background-color: #248232;
-  box-shadow: inset 0 0 5px 1px #248232;
-  height: 40px;
-  width: 40px; }
-
-.trainWagon {
-  height: 20px;
-  position: relative;
-  bottom: 10px; }
+  #header a {
+    color: #E0E0E0; }
+    #header a:hover {
+      color: #F62217; }
+  #header #trainRail {
+    margin: 1em;
+    font-size: 1.3em;
+    width: 100%; }
+  #header #navigationList {
+    display: inline-flex;
+    list-style: none;
+    position: relative; }
+    #header #navigationList li {
+      padding: 0.5em; }
+    #header #navigationList .active {
+      border: 1px solid #E0E0E0; }
 
 #bodyContent {
-  grid-row-start: 3;
   padding: 20px;
   grid-area: main; }
-
-.container {
-  grid-column-start: 1;
-  grid-column-end: -1;
-  padding: 10px; }
 
 /*CSS for footer*/
 #footer {
   grid-area: footer;
   color: #777777;
-  background-color: #111111; }
+  background-color: #111111;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #footer a {
+    color: #E0E0E0; }
+    #footer a:hover {
+      color: #F62217; }
 
 /*CSS for Home Page*/
 #HomePageContainer {
   display: grid;
   grid-row-gap: 20px; }
-
-#HomePageContainer h1 {
-  color: #540b0e;
-  font-weight: bolder;
-  display: inline-block; }
+  #HomePageContainer h1 {
+    color: #E0E0E0;
+    background: #111111;
+    font-weight: bolder;
+    display: inline-block;
+    padding: 0 2em; }
 
 /*CSS for contact*/
 .introWrapper {
@@ -226,22 +179,3 @@ a:hover:visited {
   padding-left: 10px;
   grid-row-start: -3;
   box-shadow: -1px 1px 3px 0 #676767; }
-
-/*Keyframes are written here !!!!!!!!!!!*/
-@keyframes sunlight {
-  from {
-    background: radial-gradient(circle at 0% 110px, #fe8000, rgba(255, 235, 0, 0.55) 5%, #0396ff 15%, rgba(0, 156, 255, 0.28) 120%); }
-  to {
-    background: radial-gradient(circle at 100% 110px, #fe8000, rgba(255, 235, 0, 0.55) 5%, #0396ff 15%, rgba(0, 156, 255, 0.28) 120%); } }
-
-@keyframes MagicBreath {
-  from {
-    background: url(/images/HexaScale.png), linear-gradient(#6d00ff, #fff 50%); }
-  to {
-    background: url(/images/HexaScale.png), linear-gradient(#3200ff, #fff 100%); } }
-
-@keyframes magicBorderRadius {
-  from {
-    border-radius: 0px; }
-  to {
-    border-radius: 25px; } }

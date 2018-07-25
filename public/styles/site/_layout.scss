@@ -1,59 +1,18 @@
-/*
-Color Chart Dark red Workshop:
-	#111111 Licorice
-	#e9e9e9 Platinium
-	#e09f3e Good Yellow
-	#9e2a2b Good Red
-	#540b0e Bad Red
-*/
-
-/*
-Color Chart blue green peace:
-	#A09EBB pastel purple
-	#A8AEC1 Wild Blue Yonder
-	#B5D2CB Pastel Blue
-	#BFFFBC Tea Green
-	#A6FFA1 Mint Green
-*/
-
-$backgroundColor: #E0E0E0;
-$elementColor:#111111;
-$elementFont:#E0E0E0;
-$accentColor: #F62217;
-
-$fontColor:#111111; //Used for the overall site
-$secondaryFontColor:#777777; //used for footer
-
-$mainColor: #248232;
-$headerColor: #540b0e;
-$tertiaryColor: #248232;
-
 /*Importing font here*/
-@import url('https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans');
+// @import url('https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans');
 
-.gallery-image img{
-	display: block;
-	max-width: 100%;
-	height: auto;
-}
-
-/*Web général elements*/
-
-*{
-	padding:0px;
-	margin: 0px;
-	font-family: 'Open Sans', monospace;
-}
 
 html{
+	padding:0px;
+	margin: 0px;
 	height: 100%
 }
 
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.42857;
-	color: $fontColor;
+	font-size: $font-size-base;
+	// line-height: 1.42857;
+	color: $textColor;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	grid-template-rows: auto 1fr auto;
@@ -62,18 +21,14 @@ body {
 	"main main"
 	"footer footer";
 
-	background-color: $backgroundColor;
-	background-size: 13px;
-	background-attachment: fixed;
+	background-color: $background;
+	padding:0px;
+	margin: 0px;
 	height: 100%;
 }
 
-h1{
-	color:$headerColor
-}
-
-a{
-	color:$fontColor;
+a {
+	color:$textColor;
 	font-weight: bold;
 	text-decoration: none;
 
@@ -82,26 +37,27 @@ a{
 	}
 
 	&:visited {
-		color:$fontColor;
+		color:$textColor;
 	}
 }
 
 #brandWrapper{
 	grid-area:brand;
 	padding:20px;
-	background-color: $elementColor;
-	color: $backgroundColor;
+	background-color: $backgroundDark;
+	color: $textColorDark1;
 	font-size: 3em;
 }
+
 /*CSS for header + nav bar*/
 #header{
 	grid-area:header;
-	background-color: $elementColor;
+	background-color: $backgroundDark;
 	display: inline-flex;
 	align-items: flex-end;
 
 	a {
-		color: $backgroundColor;
+		color: $textColorDark1;
 
 		&:hover {
 			color: $accentColor;
@@ -124,7 +80,7 @@ a{
 		}
 
 		.active {
-			border: 1px solid $backgroundColor;
+			border: 1px solid $textColorDark1;
 		}
 	}
 }
@@ -136,143 +92,19 @@ a{
 
 /*CSS for footer*/
 #footer {
-	grid-area:footer;
-	color: $secondaryFontColor;
-	background-color: $elementColor;
+	grid-area: footer;
+	color: $textColorDark2;
+	background-color: $backgroundDark;
 	padding: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	a {
-		color: $backgroundColor;
+		color: $textColorDark1;
 
 		&:hover {
 			color: $accentColor;
 		}
 	}
-}
-
-/*CSS for Home Page*/
-// To be moved to another file maybe
-#HomePageContainer{
-	display: grid;
-	grid-row-gap: 20px;
-
-	h1{
-		color: $backgroundColor;
-		background: $elementColor;
-		font-weight: bolder;
-		display: inline-block;
-		padding: 0 2em;
-	}
-}
-
-
-/*CSS for contact*/
-// To be moved to another file maybe 
-.introWrapper{
-	display: flex;
-}
-
-.introContainer{
-	background-color: #ffffff;
-	padding: 15px;
-	box-shadow: 2px 2px 5px 1px #0000007a;
-	border-radius: 0px 0px 0px 100%;
-}
-
-.introTitle{
-
-}
-
-.introContent{
-
-}
-
-#ListenToUsInContact p{
-
-}
-
-.contactFormWrapper{
-    display: grid;
-    grid-template-columns: 35% auto;
-    grid-template-rows: auto auto;
-    grid-gap: 10px;
-}
-
-.contactForm{
-	display: inline-grid;
-	grid-template-columns: 150px minmax(100px,160px) minmax(100px,auto);
-	grid-gap: 10px;
-
-	box-shadow: 1px 1px 5px 0 black;
-	padding: 15px;
-	background-color: #c498ffd6;
-
-}
-
-.contactForm span{
-	font-weight:bolder;
-}
-
-.contactForm textarea{
-	grid-column-start: 2;
-	grid-column-end: -1;
-	height: 150px;
-}
-
-.usualBackground{
-	background-color: #ffffff;
-    padding: 15px;
-    box-shadow: 2px 2px 5px 1px #0000007a;
-}
-
-.bottomProtection{
-	border-radius: 0px 0px 100% 0px;
-}
-.topProtection{
-	border-radius: 0px 100% 0px 0px;
-}
-
-.form-group {
-    grid-column-start: 1;
-    grid-column-end: -1;
-}
-
-.introStick{
-	margin-left: 5px;
-}
-
-/*Card CSS for about module*/
-// To be moved to another file maybe
-
-.aboutCardWrapper{
-
-	display: inline-grid;
-	grid-template-columns: 150px 200px;
-	grid-template-rows: 10px min-content min-content min-content 10px;
-	box-shadow: 1px 1px 3px 0;
-	grid-column-gap: 10px;
-}
-
-.cardImage{
-	height: 200px;
-	grid-row-start: 1;
-	grid-row-end: -1;
-}
-
-.cardName{
-	background: linear-gradient(to right, #6100ff, #e8e8e8);
-	color: #e8e8e8;
-	padding: 5px;
-	padding-left: 10px;
-	grid-row-start: 2;
-	box-shadow: -1px 1px 3px 0 #676767;
-}
-
-.cardDescription{
-	background: linear-gradient(to right, #6100ff, #e8e8e8);
-	color: #e8e8e8;
-	padding: 5px;
-	padding-left: 10px;
-	grid-row-start: -3;
-	box-shadow: -1px 1px 3px 0 #676767;
 }

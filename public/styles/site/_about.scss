@@ -1,0 +1,34 @@
+/*Card CSS for about module*/
+
+.aboutCardWrapper{
+
+	display: inline-grid;
+	grid-template-columns: 150px 200px;
+	grid-template-rows: 10px min-content min-content min-content 10px;
+	box-shadow: 1px 1px 3px 0;
+	grid-column-gap: 10px;
+}
+
+.cardImage{
+	height: 200px;
+	grid-row-start: 1;
+	grid-row-end: -1;
+}
+
+.cardName{
+	background: linear-gradient(to right, #6100ff, #e8e8e8);
+	color: #e8e8e8;
+	padding: 5px;
+	padding-left: 10px;
+	grid-row-start: 2;
+	box-shadow: -1px 1px 3px 0 #676767;
+}
+
+.cardDescription{
+	background: linear-gradient(to right, #6100ff, #e8e8e8);
+	color: #e8e8e8;
+	padding: 5px;
+	padding-left: 10px;
+	grid-row-start: -3;
+	box-shadow: -1px 1px 3px 0 #676767;
+}
