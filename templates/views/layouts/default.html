@@ -33,7 +33,7 @@
 	</head>
 	<body>
 		<div id="brandWrapper">
-			<img src="/images/EBDLOGO.png"/>
+			Interesting by design
 		</div>
 		{# HEADER #}
 		<div id="header" class="">
@@ -42,13 +42,11 @@
 			   ... or completely change this header to suit your design. #}
 			<div role="navigation" id="trainRail">
 				<ul id="navigationList" class="navContainer">
-					<li class="trainSide"></li>
 					{% for link in navLinks %}
 					<li class="{{ 'active' if link.key == section else '' }}">
 						<a class="navItems" href="{{ link.href }}">{{ link.label }}</a>
 					</li>
 					{% endfor %}
-					<li class="trainSide"></li>
 				</ul>
 			</div>
 		</div>

@@ -1,11 +1,19 @@
 @charset "UTF-8";
 /*
-Color Chart:
+Color Chart Dark red Workshop:
 	#111111 Licorice
 	#e9e9e9 Platinium
 	#e09f3e Good Yellow
 	#9e2a2b Good Red
 	#540b0e Bad Red
+*/
+/*
+Color Chart blue green peace:
+	#A09EBB pastel purple
+	#A8AEC1 Wild Blue Yonder
+	#B5D2CB Pastel Blue
+	#BFFFBC Tea Green
+	#A6FFA1 Mint Green
 */
 /*Importing font here*/
 @import url("https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans");
@@ -27,16 +35,15 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #333333;
-  background-color: #111111;
+  color: #111111;
   display: grid;
-  /*Logo - Header Rail - BodyContent - Footer*/
-  grid-template-rows: 150px repeat(3, auto);
-  grid-row-gap: 20px;
-  grid-column-gap: 10px;
-  background-color: #111111;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "brand header" "main main" "footer footer";
+  background-color: #E0E0E0;
   background-size: 13px;
   background-attachment: fixed;
+  height: 100%;
   /*commented key frames*/
   /*animation-name: MagicBreath;
 	animation-iteration-count: infinite;
@@ -44,32 +51,35 @@ body {
 	animation-direction: alternate;*/ }
 
 h1 {
-  color: #9e2a2b; }
+  color: #540b0e; }
 
 a {
-  color: #9e2a2b; }
+  color: #540b0e; }
 
 a:hover {
-  color: #e09f3e;
+  color: #248232;
   transform: skew(-10deg); }
 
 a:visited {
   color: #540b0e; }
 
 a:hover:visited {
-  color: #e09f3e; }
+  color: #248232; }
 
-#brandWrapper img {
-  height: 200px; }
+#brandWrapper {
+  grid-area: brand;
+  padding: 20px;
+  background-color: #111111;
+  color: #E0E0E0;
+  font-size: 3em; }
 
 /*CSS for header + nav bar*/
 #header {
   grid-row-start: 2;
-  margin-top: 30px;
-  background-color: #b2b2b287;
-  border-bottom: solid #686868 1px;
-  border-top: solid #686868 1px;
-  box-shadow: inset 0 0 5px 0; }
+  grid-area: header;
+  background-color: #111111;
+  display: inline-flex;
+  align-items: flex-end; }
 
 #loginPanel {
   vertical-align: top;
@@ -89,23 +99,21 @@ a:hover:visited {
 
 .navItems {
   padding: 10px;
-  background-color: #e9e9e9;
-  box-shadow: inset 0 0 2px 0px #540b0e;
-  margin-left: 1px;
-  margin-right: 1px;
-  border-radius: 5%;
-  color: #540b0e;
   font-weight: bold;
   text-decoration: none; }
 
+.navItems a {
+  color: #E0E0E0; }
+
 #trainRail {
-  height: 20px; }
+  padding: 20px;
+  font-size: 1.3em; }
 
 .trainSide {
   position: relative;
   bottom: 10px;
-  background-color: #e09f3e;
-  box-shadow: inset 0 0 5px 1px #540b0e;
+  background-color: #248232;
+  box-shadow: inset 0 0 5px 1px #248232;
   height: 40px;
   width: 40px; }
 
@@ -116,21 +124,19 @@ a:hover:visited {
 
 #bodyContent {
   grid-row-start: 3;
-  padding: 20px; }
+  padding: 20px;
+  grid-area: main; }
 
 .container {
   grid-column-start: 1;
   grid-column-end: -1;
-  background-color: #e9e9e9;
   padding: 10px; }
 
 /*CSS for footer*/
 #footer {
-  margin-top: 30px;
-  border-top: 1px solid #eeeeee;
-  padding-top: 30px;
+  grid-area: footer;
   color: #777777;
-  background: linear-gradient(#111111, #540b0e); }
+  background-color: #111111; }
 
 /*CSS for Home Page*/
 #HomePageContainer {
@@ -138,9 +144,8 @@ a:hover:visited {
   grid-row-gap: 20px; }
 
 #HomePageContainer h1 {
-  color: #9e2a2b;
+  color: #540b0e;
   font-weight: bolder;
-  transform: rotate(-6deg);
   display: inline-block; }
 
 /*CSS for contact*/

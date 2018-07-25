@@ -1,11 +1,32 @@
 /*
-Color Chart:
+Color Chart Dark red Workshop:
 	#111111 Licorice
 	#e9e9e9 Platinium
 	#e09f3e Good Yellow
 	#9e2a2b Good Red
 	#540b0e Bad Red
 */
+
+/*
+Color Chart blue green peace:
+	#A09EBB pastel purple
+	#A8AEC1 Wild Blue Yonder
+	#B5D2CB Pastel Blue
+	#BFFFBC Tea Green
+	#A6FFA1 Mint Green
+*/
+
+$backgroundColor: #E0E0E0;
+$elementColor:#111111;
+$elementFont:#E0E0E0;
+
+
+$fontColor:#111111; //Used for the overall site
+$secondaryFontColor:#777777; //used for footer
+
+$mainColor: #248232;
+$headerColor: #540b0e;
+$tertiaryColor: #248232;
 
 /*Importing font here*/
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans');
@@ -29,21 +50,22 @@ html{
 }
 
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.42857;
-	color: #333333;
-	background-color: #111111;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: $fontColor;
 	display: grid;
-	/*Logo - Header Rail - BodyContent - Footer*/
-	grid-template-rows: 150px  repeat(3, auto);
-	grid-row-gap: 20px;
-	grid-column-gap: 10px;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas: 
+	"brand header"
+	"main main"
+	"footer footer";
 
-	background-color:#111111;
-
-	background-size: 13px;
-	background-attachment: fixed;
+    background-color: $backgroundColor;
+    background-size: 13px;
+    background-attachment: fixed;
+    height: 100%;
 	
 	/*commented key frames*/
 	/*animation-name: MagicBreath;
@@ -53,39 +75,40 @@ body {
 }
 
 h1{
-	color:#9e2a2b
+	color:$headerColor
 }
 
 a{
-	color:#9e2a2b;
+	color:$headerColor;
 }
 
 a:hover{
-	color:#e09f3e;
+	color:$mainColor;
 	transform:skew(-10deg);
 }
 
 a:visited{
-	color:#540b0e;
+	color:$headerColor;
 }
 
 a:hover:visited {
-	color:#e09f3e;
+	color:$mainColor;
 }
 
-#brandWrapper img{
-	height: 200px;
+#brandWrapper{
+	grid-area:brand;
+	padding:20px;
+	background-color: $elementColor;
+	color: $backgroundColor;
+	font-size: 3em;
 }
 /*CSS for header + nav bar*/
 #header{
-
 	grid-row-start: 2;
-	margin-top: 30px;
-
-	background-color: #b2b2b287;
-	border-bottom: solid #686868 1px;
-	border-top: solid #686868 1px;
-	box-shadow: inset 0 0 5px 0;
+	grid-area:header;
+	background-color: $elementColor;
+    display: inline-flex;
+    align-items: flex-end;
 }
 
 
@@ -114,25 +137,24 @@ a:hover:visited {
 
 .navItems{
     padding: 10px;
-    background-color: #e9e9e9;
-    box-shadow: inset 0 0 2px 0px #540b0e;
-    margin-left: 1px;
-    margin-right: 1px;
-    border-radius: 5%;
-    color: #540b0e;
     font-weight: bold;
     text-decoration: none;
 }
 
+.navItems a{
+	color: $elementFont;
+}
+
 #trainRail{
-	height: 20px;
+	padding: 20px;
+    font-size: 1.3em;
 }
 
 .trainSide{
     position: relative;
     bottom: 10px;
-    background-color: #e09f3e;
-    box-shadow: inset 0 0 5px 1px #540b0e;
+    background-color: $mainColor;
+    box-shadow: inset 0 0 5px 1px $tertiaryColor;
     height: 40px;
     width: 40px;
 }
@@ -146,22 +168,20 @@ a:hover:visited {
 #bodyContent{
 	grid-row-start: 3;
 	padding: 20px;
+	grid-area: main;
 }
 
 .container{
 	grid-column-start: 1;
 	grid-column-end: -1;
 
-	background-color: #e9e9e9;
 	padding: 10px;
 }
 /*CSS for footer*/
 #footer {
-	margin-top: 30px;
-    border-top: 1px solid #eeeeee;
-    padding-top: 30px;
-    color: #777777;
-    background: linear-gradient(#111111,#540b0e);
+	grid-area:footer;
+	color: $secondaryFontColor;
+	background-color: $elementColor;
 }
 
 /*CSS for Home Page*/
@@ -171,9 +191,8 @@ a:hover:visited {
 }
 
 #HomePageContainer h1{
-	color: #9e2a2b;
+	color: $headerColor;
     font-weight: bolder;
-    transform: rotate(-6deg);
     display: inline-block;
 }
 
