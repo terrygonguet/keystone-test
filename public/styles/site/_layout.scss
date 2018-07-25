@@ -19,7 +19,7 @@ Color Chart blue green peace:
 $backgroundColor: #E0E0E0;
 $elementColor:#111111;
 $elementFont:#E0E0E0;
-
+$accentColor: #F62217;
 
 $fontColor:#111111; //Used for the overall site
 $secondaryFontColor:#777777; //used for footer
@@ -50,10 +50,10 @@ html{
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857;
-    color: $fontColor;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857;
+	color: $fontColor;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	grid-template-rows: auto 1fr auto;
@@ -62,16 +62,10 @@ body {
 	"main main"
 	"footer footer";
 
-    background-color: $backgroundColor;
-    background-size: 13px;
-    background-attachment: fixed;
-    height: 100%;
-	
-	/*commented key frames*/
-	/*animation-name: MagicBreath;
-	animation-iteration-count: infinite;
-	animation-duration: 4s;
-	animation-direction: alternate;*/
+	background-color: $backgroundColor;
+	background-size: 13px;
+	background-attachment: fixed;
+	height: 100%;
 }
 
 h1{
@@ -79,20 +73,17 @@ h1{
 }
 
 a{
-	color:$headerColor;
-}
+	color:$fontColor;
+	font-weight: bold;
+	text-decoration: none;
 
-a:hover{
-	color:$mainColor;
-	transform:skew(-10deg);
-}
+	&:hover, &:visited:hover {
+		color: $accentColor;
+	}
 
-a:visited{
-	color:$headerColor;
-}
-
-a:hover:visited {
-	color:$mainColor;
+	&:visited {
+		color:$fontColor;
+	}
 }
 
 #brandWrapper{
@@ -104,100 +95,79 @@ a:hover:visited {
 }
 /*CSS for header + nav bar*/
 #header{
-	grid-row-start: 2;
 	grid-area:header;
 	background-color: $elementColor;
-    display: inline-flex;
-    align-items: flex-end;
-}
-
-
-#loginPanel{
-	vertical-align: top;
-	float: right;
-}
-
-.navContainer{
 	display: inline-flex;
-	list-style: none;
-	position: relative;
-}
+	align-items: flex-end;
 
-#navigationList{
+	a {
+		color: $backgroundColor;
 
-	left:2%;
-	li:first-child {
-		border-radius: 60% 10% 10% 60%;
+		&:hover {
+			color: $accentColor;
+		}
 	}
 
-	li:last-child {
-		border-radius: 10% 60% 60% 10% ;
+	#trainRail{
+		margin: 1em;
+		font-size: 1.3em;
+		width: 100%;
 	}
-}
 
-.navItems{
-    padding: 10px;
-    font-weight: bold;
-    text-decoration: none;
-}
+	#navigationList{
+		display: inline-flex;
+		list-style: none;
+		position: relative;
 
-.navItems a{
-	color: $elementFont;
-}
+		li {
+			padding: 0.5em;
+		}
 
-#trainRail{
-	padding: 20px;
-    font-size: 1.3em;
-}
-
-.trainSide{
-    position: relative;
-    bottom: 10px;
-    background-color: $mainColor;
-    box-shadow: inset 0 0 5px 1px $tertiaryColor;
-    height: 40px;
-    width: 40px;
-}
-
-.trainWagon{
-	height: 20px;
-	position: relative;
-	bottom: 10px;
+		.active {
+			border: 1px solid $backgroundColor;
+		}
+	}
 }
 
 #bodyContent{
-	grid-row-start: 3;
 	padding: 20px;
 	grid-area: main;
 }
 
-.container{
-	grid-column-start: 1;
-	grid-column-end: -1;
-
-	padding: 10px;
-}
 /*CSS for footer*/
 #footer {
 	grid-area:footer;
 	color: $secondaryFontColor;
 	background-color: $elementColor;
+	padding: 1em;
+
+	a {
+		color: $backgroundColor;
+
+		&:hover {
+			color: $accentColor;
+		}
+	}
 }
 
 /*CSS for Home Page*/
+// To be moved to another file maybe
 #HomePageContainer{
 	display: grid;
 	grid-row-gap: 20px;
+
+	h1{
+		color: $backgroundColor;
+		background: $elementColor;
+		font-weight: bolder;
+		display: inline-block;
+		padding: 0 2em;
+	}
 }
 
-#HomePageContainer h1{
-	color: $headerColor;
-    font-weight: bolder;
-    display: inline-block;
-}
 
 /*CSS for contact*/
-
+// To be moved to another file maybe 
 .introWrapper{
 	display: flex;
 }
@@ -272,6 +242,7 @@ a:hover:visited {
 }
 
 /*Card CSS for about module*/
+// To be moved to another file maybe
 
 .aboutCardWrapper{
 
@@ -304,33 +275,4 @@ a:hover:visited {
 	padding-left: 10px;
 	grid-row-start: -3;
 	box-shadow: -1px 1px 3px 0 #676767;
-}
-
-/*Keyframes are written here !!!!!!!!!!!*/
-@keyframes sunlight{
-	from {
-		background: radial-gradient(circle at 0% 110px,rgb(255, 129, 0)-1%, rgba(255, 235, 0, 0.55) 5%, rgb(3, 150, 255)15%,rgba(0, 156, 255, 0.28)120%);
-	}
-	to {
-		background: radial-gradient(circle at 100% 110px,rgb(255, 129, 0)-1%, rgba(255, 235, 0, 0.55) 5%, rgb(3, 150, 255)15%,rgba(0, 156, 255, 0.28)120%);
-	}
-}
-
-@keyframes MagicBreath{
-	from{
-		background: url(/images/HexaScale.png), linear-gradient(#6d00ff,#fff 50%);
-	}
-	to{
-		background: url(/images/HexaScale.png), linear-gradient(#3200ff,#fff 100%);
-	}
-}
-
-@keyframes magicBorderRadius{
-	from{
-		border-radius: 0px;
-	}
-
-	to{
-		border-radius: 25px;
-	}
 }
