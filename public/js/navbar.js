@@ -3,28 +3,35 @@ $(document).ready(function () {
 	let rail = $('#trainRail');
 	let train = $('#navigationList');
 	let trainWidth = train.width();
-	let bounds = { start: rail.position().left, end: rail.position().left + trainWidth };
-	let trainPos = trainWidth / 2;
+	let trainPos = 0;
 	let speed = 800;
+	let target = 0;
 
 	function onInterraction (e) {
 		// only if we hover/move over the rail itself
 		if (e.target !== rail[0]) return;
-		let left = e.clientX - trainWidth / 2 - bounds.start;
+		let bounds = { start: rail.position().left, end: rail.position().left + trainWidth };
+		target = e.clientX - trainWidth / 2 - bounds.start;
 		// keep the navbar in the screen
-		if (left < 0) {
-			left = 0;
-		} else if (left > rail.width() - trainWidth) {
-			left = rail.width() - trainWidth;
+		if (target < 0) {
+			target = 0;
+		} else if (target > rail.width() - trainWidth) {
+			target = rail.width() - trainWidth;
 		}
-		// compute duration to simulate constant speed
-		let duration = Math.abs(left - trainPos) / speed * 1000;
-		train.stop().animate({ left }, {
-			duration,
-			easing: 'linear',
-			step: (now) => (trainPos = now), // keep track of where the bar is if the animation is interrupted
-		});
 	}
 
-	rail.hover(onInterraction).mousemove(onInterraction);
+	rail.mousemove(onInterraction);
+
+	let old = 0;
+	requestAnimationFrame(function raf (time) {
+		let delta = time - old;
+		old = time;
+		if (Math.abs(target - trainPos) >= delta * speed / 1000) {
+			trainPos += delta * speed / 1000 * Math.sign(target - trainPos);
+		} else {
+			trainPos = target;
+		}
+		train.css('left', trainPos);
+		requestAnimationFrame(raf);
+	});
 });
