@@ -1,73 +1,67 @@
 /*CSS for contact*/
-.introWrapper{
-	display: flex;
-}
 
-.introContainer{
-	background-color: #ffffff;
-	padding: 15px;
-	box-shadow: 2px 2px 5px 1px #0000007a;
-	border-radius: 0px 0px 0px 100%;
-}
-
-.introTitle{
-
-}
-
-.introContent{
-
-}
-
-#ListenToUsInContact p{
-
-}
-
-.contactFormWrapper{
-    display: grid;
-    grid-template-columns: 35% auto;
-    grid-template-rows: auto auto;
-    grid-gap: 10px;
-}
 
 .contactForm{
-	display: inline-grid;
-	grid-template-columns: 150px minmax(100px,160px) minmax(100px,auto);
-	grid-gap: 10px;
+	display: inline-flex;
+    flex-direction: column;
+    background-color: $backgroundDark;
+    color: $textColorDark1;
+    font-size: 1.2em;
+    font-weight: bold;
+	padding: 1em;
+	
+	 input,  textarea,  select{
+		border: none;
+		background-color: $background;
+		padding: 0.3em;
+		margin-bottom: 0.4em;
+	}
 
-	box-shadow: 1px 1px 5px 0 black;
-	padding: 15px;
-	background-color: #c498ffd6;
+	button{
+		border: $background solid 0.3em;
+		background-color: $backgroundDark;
+		color: $textColorDark1;
+		font-weight: bold;
+		margin-top: 1em;
+		padding: 0.5em;
+		align-self: center;
+		outline: none;
+	}
 
+	button:hover{
+		width: -webkit-fill-available;;
+	}
+
+	button:active{
+		background-color: $background;
+		color: $textColor;
+	}
+
+	span{
+		margin-bottom: 0.2em;
+	}
 }
 
-.contactForm span{
-	font-weight:bolder;
+
+.contactFormWrapper{
+    display: inline-flex;
+    flex-direction: column;
+    width: 30%;
 }
 
-.contactForm textarea{
-	grid-column-start: 2;
-	grid-column-end: -1;
-	height: 150px;
+#flash-messages{
+
+	background-color: #111111;
+    color: #e0e0e0;
+    padding: 0.5em;
+
+	h5{
+		color:$accentColor;
+		font-size: 1em;
+		margin: unset;
+	}
 }
 
-.usualBackground{
-	background-color: #ffffff;
-    padding: 15px;
-    box-shadow: 2px 2px 5px 1px #0000007a;
-}
-
-.bottomProtection{
-	border-radius: 0px 0px 100% 0px;
-}
-.topProtection{
-	border-radius: 0px 100% 0px 0px;
-}
-
-.form-group {
-    grid-column-start: 1;
-    grid-column-end: -1;
-}
-
-.introStick{
-	margin-left: 5px;
+#ListenToUsInContact{
+	padding-left: 1em;
 }

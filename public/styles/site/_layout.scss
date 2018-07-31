@@ -41,6 +41,15 @@ a {
 	}
 }
 
+h2{
+	color: $textColorDark1;
+	background: $backgroundDark;
+	font-weight: bolder;
+	display: inline-block;
+	padding: 0 2em;
+	font-size: 2.2em;
+}
+
 #brandWrapper{
 	grid-area:brand;
 	padding:20px;

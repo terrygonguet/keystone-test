@@ -42,6 +42,14 @@ a {
   a:visited {
     color: #111111; }
 
+h2 {
+  color: #E0E0E0;
+  background: #111111;
+  font-weight: bolder;
+  display: inline-block;
+  padding: 0 2em;
+  font-size: 2.2em; }
+
 #brandWrapper {
   grid-area: brand;
   padding: 20px;
@@ -54,19 +62,21 @@ a {
   grid-area: header;
   background-color: #111111;
   display: inline-flex;
-  align-items: flex-end; }
+  align-items: flex-end;
+  padding: 1em 0; }
   #header a {
     color: #E0E0E0; }
     #header a:hover {
       color: #F62217; }
   #header #trainRail {
-    margin: 1em;
     font-size: 1.3em;
     width: 100%; }
   #header #navigationList {
     display: inline-flex;
     list-style: none;
-    position: relative; }
+    position: relative;
+    margin: 0;
+    padding: 0; }
     #header #navigationList li {
       padding: 0.5em; }
     #header #navigationList .active {
@@ -94,62 +104,54 @@ a {
 #HomePageContainer {
   display: grid;
   grid-row-gap: 20px; }
-  #HomePageContainer h1 {
-    color: #E0E0E0;
-    background: #111111;
-    font-weight: bolder;
-    display: inline-block;
-    padding: 0 2em; }
 
 /*CSS for contact*/
-.introWrapper {
-  display: flex; }
-
-.introContainer {
-  background-color: #ffffff;
-  padding: 15px;
-  box-shadow: 2px 2px 5px 1px #0000007a;
-  border-radius: 0px 0px 0px 100%; }
+.contactForm {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: #111111;
+  color: #E0E0E0;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 1em; }
+  .contactForm input, .contactForm textarea, .contactForm select {
+    border: none;
+    background-color: #E0E0E0;
+    padding: 0.3em;
+    margin-bottom: 0.4em; }
+  .contactForm button {
+    border: #E0E0E0 solid 0.3em;
+    background-color: #111111;
+    color: #E0E0E0;
+    font-weight: bold;
+    margin-top: 1em;
+    padding: 0.5em;
+    align-self: center;
+    outline: none; }
+  .contactForm button:hover {
+    width: -webkit-fill-available; }
+  .contactForm button:active {
+    background-color: #E0E0E0;
+    color: #111111; }
+  .contactForm span {
+    margin-bottom: 0.2em; }
 
 .contactFormWrapper {
-  display: grid;
-  grid-template-columns: 35% auto;
-  grid-template-rows: auto auto;
-  grid-gap: 10px; }
+  display: inline-flex;
+  flex-direction: column;
+  width: 30%; }
 
-.contactForm {
-  display: inline-grid;
-  grid-template-columns: 150px minmax(100px, 160px) minmax(100px, auto);
-  grid-gap: 10px;
-  box-shadow: 1px 1px 5px 0 black;
-  padding: 15px;
-  background-color: #c498ffd6; }
+#flash-messages {
+  background-color: #111111;
+  color: #e0e0e0;
+  padding: 0.5em; }
+  #flash-messages h5 {
+    color: #F62217;
+    font-size: 1em;
+    margin: unset; }
 
-.contactForm span {
-  font-weight: bolder; }
-
-.contactForm textarea {
-  grid-column-start: 2;
-  grid-column-end: -1;
-  height: 150px; }
-
-.usualBackground {
-  background-color: #ffffff;
-  padding: 15px;
-  box-shadow: 2px 2px 5px 1px #0000007a; }
-
-.bottomProtection {
-  border-radius: 0px 0px 100% 0px; }
-
-.topProtection {
-  border-radius: 0px 100% 0px 0px; }
-
-.form-group {
-  grid-column-start: 1;
-  grid-column-end: -1; }
-
-.introStick {
-  margin-left: 5px; }
+#ListenToUsInContact {
+  padding-left: 1em; }
 
 /*Card CSS for about module*/
 .aboutCardWrapper {
