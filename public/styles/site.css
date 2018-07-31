@@ -27,7 +27,7 @@ body {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
-  grid-template-areas: "brand header" "main main" "footer footer";
+  grid-template-areas: "brand header" "main main" "footer footer";
   background-color: #E0E0E0;
   padding: 0px;
   margin: 0px;

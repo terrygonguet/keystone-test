@@ -3,14 +3,14 @@
 
 .contactForm{
 	display: inline-flex;
-    flex-direction: column;
-    background-color: $backgroundDark;
-    color: $textColorDark1;
-    font-size: 1.2em;
-    font-weight: bold;
+	flex-direction: column;
+	background-color: $backgroundDark;
+	color: $textColorDark1;
+	font-size: 1.2em;
+	font-weight: bold;
 	padding: 1em;
 	
-	 input,  textarea,  select{
+	input, textarea, select{
 		border: none;
 		background-color: $background;
 		padding: 0.3em;
@@ -44,16 +44,16 @@
 
 
 .contactFormWrapper{
-    display: inline-flex;
-    flex-direction: column;
-    width: 30%;
+	display: inline-flex;
+	flex-direction: column;
+	width: 30%;
 }
 
 #flash-messages{
 
 	background-color: #111111;
-    color: #e0e0e0;
-    padding: 0.5em;
+	color: #e0e0e0;
+	padding: 0.5em;
 
 	h5{
 		color:$accentColor;
