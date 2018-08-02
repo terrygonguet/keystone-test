@@ -10,9 +10,9 @@ html{
 
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: $font-size-base;
+	font-size: var(--font-size-base);
 	// line-height: 1.42857;
-	color: $textColor;
+	color: var(--text-color);
 	display: grid;
 	grid-template-columns: auto 1fr;
 	grid-template-rows: auto 1fr auto;
@@ -21,29 +21,29 @@ body {
 	"main main"
 	"footer footer";
 
-	background-color: $background;
+	background-color: var(--background);
 	padding:0px;
 	margin: 0px;
 	height: 100%;
 }
 
 a {
-	color:$textColor;
+	color:var(--text-color);
 	font-weight: bold;
 	text-decoration: none;
 
 	&:hover, &:visited:hover {
-		color: $accentColor;
+		color: var(--accent-color);
 	}
 
 	&:visited {
-		color:$textColor;
+		color:var(--text-color);
 	}
 }
 
 h2{
-	color: $textColorDark1;
-	background: $backgroundDark;
+	color: var(--text-color-dark1);
+	background: var(--background-dark);
 	font-weight: bolder;
 	display: inline-block;
 	padding: 0 2em;
@@ -53,24 +53,24 @@ h2{
 #brandWrapper{
 	grid-area:brand;
 	padding:20px;
-	background-color: $backgroundDark;
-	color: $textColorDark1;
+	background-color: var(--background-dark);
+	color: var(--text-color-dark1);
 	font-size: 3em;
 }
 
 /*CSS for header + nav bar*/
 #header{
 	grid-area:header;
-	background-color: $backgroundDark;
+	background-color: var(--background-dark);
 	display: inline-flex;
 	align-items: flex-end;
 	padding: 1em 0;
 
 	a {
-		color: $textColorDark1;
+		color: var(--text-color-dark1);
 
 		&:hover {
-			color: $accentColor;
+			color: var(--accent-color);
 		}
 	}
 
@@ -91,7 +91,7 @@ h2{
 		}
 
 		.active {
-			border: 1px solid $textColorDark1;
+			border: 1px solid var(--text-color-dark1);
 		}
 	}
 }
@@ -104,18 +104,18 @@ h2{
 /*CSS for footer*/
 #footer {
 	grid-area: footer;
-	color: $textColorDark2;
-	background-color: $backgroundDark;
+	color: var(--text-color-dark2);
+	background-color: var(--background-dark);
 	padding: 1em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	a {
-		color: $textColorDark1;
+		color: var(--text-color-dark1);
 
 		&:hover {
-			color: $accentColor;
+			color: var(--accent-color);
 		}
 	}
 }

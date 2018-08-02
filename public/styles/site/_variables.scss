@@ -16,10 +16,12 @@ Color Chart blue green peace:
 	#A6FFA1 Mint Green
 */
 
-$font-size-base: 14px;
-$background:     #E0E0E0;
-$textColor:      #111111;
-$backgroundDark: #111111;
-$textColorDark1: #E0E0E0;
-$textColorDark2: #777777; //used for footer
-$accentColor:    #F62217;
+:root {
+	--font-size-base:   14px;
+	--background:       #E0E0E0;
+	--text-color:       #111111;
+	--background-dark:  #111111;
+	--text-color-dark1: #E0E0E0;
+	--text-color-dark2: #777777; //used for footer
+	--accent-color:     #F62217;
+}
