@@ -1,10 +1,12 @@
 {% extends "layouts/default.html" %}
 
 {% block content %}
-<div class="container">
+<div class="aboutContainer">
 	{% for user in users %}
 	<div class="aboutCardWrapper">
-		{{ user._.photo.tag({ mode:'fit', width:100 }) | safe }}
+		<div class="imageContainer">
+			{{ user._.photo.tag({ mode:'fit', width:300 }) | safe }}
+		</div>
 		<h3 class="cardName">{{ user.name.full }}</h3>
 		<p class="cardDescription">{{ user.description }}</p>
 	</div>

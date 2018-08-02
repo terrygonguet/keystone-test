@@ -17,6 +17,10 @@
 		margin-bottom: 0.4em;
 	}
 
+	select{
+		cursor: pointer;
+	}
+
 	button{
 		border: var(--background) solid 0.3em;
 		background-color: var(--background-dark);
@@ -26,6 +30,7 @@
 		padding: 0.5em;
 		align-self: center;
 		outline: none;
+		cursor: pointer;
 	}
 
 	button:hover{
