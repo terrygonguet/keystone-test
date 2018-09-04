@@ -1,16 +1,25 @@
 {% extends "layouts/default.html" %}
 
 {% block content %}
-<div class="container">
-	{% for article in news %}
-	<div>
-		<h3>{{ article.name }}</h3>
-		<h5>Published : {{ article._.publishedAt.format("Do MMM YYYY") }}</h5>
-		<div>{{ article.content | safe }}</div>
+
+<div id="newsContainer">
+	<div id="TheReaderWrapper">
+
 	</div>
-	{% endfor %}
-	{% if (news.length === 0) %}
-	<p>There's no news.<br/>Sad.</p>
-	{% endif %}
+	<div id="newsList">
+		{% for article in news %}
+		<div class="articleWrapper">
+			<h3>{{ article.name }}</h3>
+			<h5>Published : {{ article._.publishedAt.format("Do MMM YYYY") }}</h5>
+			<div class="articleContent">{{ article.content | safe }}</div>
+		</div>
+		{% endfor %}
+		{% if (news.length === 0) %}
+		<p>There's no news.<br/>Sad.</p>
+		{% endif %}
+	</div>
+
 </div>
 {% endblock %}
+
+

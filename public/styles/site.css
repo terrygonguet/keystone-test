@@ -14,6 +14,15 @@ Color Chart blue green peace:
 	#BFFFBC Tea Green
 	#A6FFA1 Mint Green
 */
+:root {
+  --font-size-base:   14px;
+  --background:       #E0E0E0;
+  --text-color:       #111111;
+  --background-dark:  #111111;
+  --text-color-dark1: #E0E0E0;
+  --text-color-dark2: #777777;
+  --accent-color:     #F62217; }
+
 /*Importing font here*/
 html {
   padding: 0px;
@@ -22,29 +31,29 @@ html {
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #111111;
+  font-size: var(--font-size-base);
+  color: var(--text-color);
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "brand header" "main main" "footer footer";
-  background-color: #E0E0E0;
+  background-color: var(--background);
   padding: 0px;
   margin: 0px;
   height: 100%; }
 
 a {
-  color: #111111;
+  color: var(--text-color);
   font-weight: bold;
   text-decoration: none; }
   a:hover, a:visited:hover {
-    color: #F62217; }
+    color: var(--accent-color); }
   a:visited {
-    color: #111111; }
+    color: var(--text-color); }
 
 h2 {
-  color: #E0E0E0;
-  background: #111111;
+  color: var(--text-color-dark1);
+  background: var(--background-dark);
   font-weight: bolder;
   display: inline-block;
   padding: 0 2em;
@@ -54,21 +63,21 @@ h2 {
   grid-area: brand;
   padding: 10px;
   margin: 10px;
-  background-color: #111111;
-  color: #E0E0E0;
+  background-color: var(--background-dark);
+  color: var(--text-color-dark1);
   font-size: 3em; }
 
 /*CSS for header + nav bar*/
 #header {
   grid-area: header;
-  background-color: #111111;
+  background-color: var(--background-dark);
   display: inline-flex;
   align-items: flex-end;
   padding: 1em; }
   #header a {
-    color: #E0E0E0; }
+    color: var(--text-color-dark1); }
     #header a:hover {
-      color: #F62217; }
+      color: var(--accent-color); }
   #header #trainRail {
     font-size: 1.3em;
     width: 100%; }
@@ -81,7 +90,7 @@ h2 {
     #header #navigationList li {
       padding: 0.5em; }
     #header #navigationList .active {
-      border: 1px solid #E0E0E0; }
+      border: 1px solid var(--text-color-dark1); }
 
 #bodyContent {
   padding: 20px;
@@ -90,16 +99,16 @@ h2 {
 /*CSS for footer*/
 #footer {
   grid-area: footer;
-  color: #777777;
-  background-color: #111111;
+  color: var(--text-color-dark2);
+  background-color: var(--background-dark);
   padding: 1em;
   display: flex;
   justify-content: center;
   align-items: center; }
   #footer a {
-    color: #E0E0E0; }
+    color: var(--text-color-dark1); }
     #footer a:hover {
-      color: #F62217; }
+      color: var(--accent-color); }
 
 /*CSS for Home Page*/
 #HomePageContainer {
@@ -114,22 +123,22 @@ h2 {
 .contactForm {
   display: inline-flex;
   flex-direction: column;
-  background-color: #111111;
-  color: #E0E0E0;
+  background-color: var(--background-dark);
+  color: var(--text-color-dark1);
   font-size: 1.2em;
   font-weight: bold;
   padding: 1em; }
   .contactForm input, .contactForm textarea, .contactForm select {
     border: none;
-    background-color: #E0E0E0;
+    background-color: var(--background);
     padding: 0.3em;
     margin-bottom: 0.4em; }
   .contactForm select {
     cursor: pointer; }
   .contactForm button {
-    border: #E0E0E0 solid 0.3em;
-    background-color: #111111;
-    color: #E0E0E0;
+    border: var(--background) solid 0.3em;
+    background-color: var(--background-dark);
+    color: var(--text-color-dark1);
     font-weight: bold;
     margin-top: 1em;
     padding: 0.5em;
@@ -139,8 +148,8 @@ h2 {
   .contactForm button:hover {
     width: -webkit-fill-available; }
   .contactForm button:active {
-    background-color: #E0E0E0;
-    color: #111111; }
+    background-color: var(--background);
+    color: var(--text-color); }
   .contactForm span {
     margin-bottom: 0.2em; }
 
@@ -154,7 +163,7 @@ h2 {
   color: #e0e0e0;
   padding: 0.5em; }
   #flash-messages h5 {
-    color: #F62217;
+    color: var(--accent-color);
     font-size: 1em;
     margin: unset; }
 
@@ -191,3 +200,15 @@ h2 {
   padding: 1em;
   text-align: justify;
   line-height: 1.4em; }
+
+#newsContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: minmax(200px, 750px); }
+
+#TheReaderWrapper {
+  background-color: white;
+  margin-right: 30px; }
+
+#newsList {
+  overflow: auto; }

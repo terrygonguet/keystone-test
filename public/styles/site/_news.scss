@@ -1,0 +1,22 @@
+#newsContainer{
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: minmax(200px,750px);
+}
+
+#TheReaderWrapper{
+	background-color: white;
+	margin-right: 30px;
+}
+
+.articleWrapper{
+
+}
+
+.articleContent{
+
+}
+
+#newsList{
+	overflow: auto;
+}
