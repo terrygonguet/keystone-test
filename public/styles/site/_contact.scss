@@ -1,5 +1,9 @@
 /*CSS for contact*/
 
+#contactWrapper{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
 
 .contactForm{
 	display: inline-flex;
@@ -51,7 +55,7 @@
 .contactFormWrapper{
 	display: inline-flex;
 	flex-direction: column;
-	width: 30%;
+	padding-right: 10%;
 }
 
 #flash-messages{
@@ -65,6 +69,11 @@
 		font-size: 1em;
 		margin: unset;
 	}
+}
+
+.aboutImageWrapper{
+	background-image: url("../images/about/rotary.jpg");
+	background-position-y: center;
 }
 
 #ListenToUsInContact{

@@ -64,7 +64,7 @@ h2 {
   background-color: #111111;
   display: inline-flex;
   align-items: flex-end;
-  padding: 1em 0; }
+  padding: 1em; }
   #header a {
     color: #E0E0E0; }
     #header a:hover {
@@ -107,6 +107,10 @@ h2 {
   grid-row-gap: 20px; }
 
 /*CSS for contact*/
+#contactWrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr; }
+
 .contactForm {
   display: inline-flex;
   flex-direction: column;
@@ -143,7 +147,7 @@ h2 {
 .contactFormWrapper {
   display: inline-flex;
   flex-direction: column;
-  width: 30%; }
+  padding-right: 10%; }
 
 #flash-messages {
   background-color: #111111;
@@ -153,6 +157,10 @@ h2 {
     color: #F62217;
     font-size: 1em;
     margin: unset; }
+
+.aboutImageWrapper {
+  background-image: url("../images/about/rotary.jpg");
+  background-position-y: center; }
 
 #ListenToUsInContact {
   padding-left: 1em; }
