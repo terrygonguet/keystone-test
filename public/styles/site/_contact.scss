@@ -8,15 +8,15 @@
 .contactForm{
 	display: inline-flex;
 	flex-direction: column;
-	background-color: $backgroundDark;
-	color: $textColorDark1;
+	background-color: var(--background-dark);
+	color: var(--text-color-dark1);
 	font-size: 1.2em;
 	font-weight: bold;
 	padding: 1em;
 	
 	input, textarea, select{
 		border: none;
-		background-color: $background;
+		background-color: var(--background);
 		padding: 0.3em;
 		margin-bottom: 0.4em;
 	}
@@ -26,9 +26,9 @@
 	}
 
 	button{
-		border: $background solid 0.3em;
-		background-color: $backgroundDark;
-		color: $textColorDark1;
+		border: var(--background) solid 0.3em;
+		background-color: var(--background-dark);
+		color: var(--text-color-dark1);
 		font-weight: bold;
 		margin-top: 1em;
 		padding: 0.5em;
@@ -42,8 +42,8 @@
 	}
 
 	button:active{
-		background-color: $background;
-		color: $textColor;
+		background-color: var(--background);
+		color: var(--text-color);
 	}
 
 	span{
@@ -65,7 +65,7 @@
 	padding: 0.5em;
 
 	h5{
-		color:$accentColor;
+		color:var(--accent-color);
 		font-size: 1em;
 		margin: unset;
 	}
