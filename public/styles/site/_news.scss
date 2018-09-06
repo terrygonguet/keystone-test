@@ -1,3 +1,16 @@
+h3{
+	font-size: 2em;
+}
+
+h4{
+	font-size: 1.2em;
+	margin: 0px 0px 5px 0px;
+}
+
+h5{
+	margin: 0px 0px 10px 10px;
+}
+
 #newsContainer{
 	display: grid;
 	grid-template-columns: 2fr 1fr;
@@ -6,17 +19,28 @@
 
 #TheReaderWrapper{
 	background-color: white;
-	margin-right: 30px;
+	padding: 0px 10px 0px 10px;
 }
 
 .articleWrapper{
+	background-color: #111111;
+	color: #e0e0e0;
+	padding: 20px;
+	margin-bottom:10px;
+	margin-left:30px;
+}
 
+.articleWrapper:hover{
+	margin-left: 0px;
 }
 
 .articleContent{
-
+	p{
+		margin:0px;
+	}
 }
 
 #newsList{
 	overflow: auto;
+	grid-column-start: -2;
 }
