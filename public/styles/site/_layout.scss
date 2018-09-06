@@ -5,7 +5,29 @@
 html{
 	padding:0px;
 	margin: 0px;
-	height: 100%
+	height: 100%;
+}
+
+//Scrollbar !!
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--background); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--text-color-dark2); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--accent-color); 
 }
 
 body {
