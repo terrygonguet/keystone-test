@@ -4,24 +4,69 @@
 
 <div id="newsContainer">
 	<div id="TheReaderWrapper">
-		<h3>{{ news[0].name }}</h3>
-		<h5>Published : {{ news[0]._.publishedAt.format("Do MMM YYYY") }}</h5>
-		<div class="articleContent activeArticle">{{ news[0].content | safe }}</div>
+		<h3 id="readerName">{{ news[0].name }}</h3>
+		<h5 id="readerPublished">Published : {{ news[0]._.publishedAt.format("Do MMM YYYY") }}</h5>
+		<div class="articleContent activeArticle" id="readerContent">{{ news[0].content | safe }}</div>
 	</div>
 	<div id="newsList">
 		{% for article in news %}
-		<div class="articleWrapper">
-			<h4>{{ article.name }}</h4>
-			<h5>Published : {{ article._.publishedAt.format("Do MMM YYYY") }}</h5>
-			<div class="articleContent">{{ article.synopsis | safe }}</div>
-		</div>
+			<div class="articleWrapper {{ "selected" if loop.index == 1 else "" }}" data-id="{{ article._id }}">
+				<h4>{{ article.name }}</h4>
+				<h5>Published : {{ article._.publishedAt.format("Do MMM YYYY") }}</h5>
+				<div class="articleContent">{{ article.synopsis | safe }}</div>
+			</div>
+		{% else %}
+			<p>There's no news.<br/>Sad.</p>
 		{% endfor %}
-		{% if (news.length === 0) %}
-		<p>There's no news.<br/>Sad.</p>
-		{% endif %}
 	</div>
+	<input type="hidden" id="newsData" value="{{ utils.stringify(news) }}">
 
 </div>
 {% endblock %}
 
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+<script>
+var data = JSON.parse($("#newsData").val());
 
+$(".articleWrapper").click(function (e) {
+	let _id = $(this).data("id");
+	let article = data.find(a => a._id === _id);
+	let offset = $(this).offset();
+	let reader = $("#TheReaderWrapper");
+	let readerOffset = reader.offset();
+
+	$(".articleWrapper").removeClass("selected");
+	$(this).addClass("selected");
+	let clone = $(this).clone(false);
+	clone
+		.css({
+			position:"absolute",
+			top: offset.top,
+			left: offset.left,
+			margin: 0,
+		})
+		.appendTo("body")
+		.animate({
+			top: readerOffset.top,
+			left: readerOffset.left,
+			width: reader.width(),
+			height: reader.height(),
+			backgroundColor: "white",
+			color: "#111",
+			paddingRight: 0,
+			paddingBottom: 0,
+		}, {
+			duration: 700,
+			done: () => {
+				$("#readerName").text(article.name);
+				$("#readerPublished").text("Published : " + moment(article.publishedAt).format("Do MMM YYYY"));
+				$("#readerContent").html(article.content);
+				clone.fadeOut(() => clone.detach());
+			}
+		});
+});
+
+</script>
+{% endblock %}
