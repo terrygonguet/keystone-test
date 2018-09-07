@@ -3,9 +3,12 @@
 require('dotenv').config();
 
 // Require keystone
-var keystone = require('keystone');
-var cons = require('consolidate');
-var nunjucks = require('nunjucks');
+const keystone = require('keystone');
+const cons = require('consolidate');
+const nunjucks = require('nunjucks');
+const i18n = require('i18n');
+const cookieParser = require('cookie-parser');
+
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -72,5 +75,9 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	+ '\nset up your mailgun integration');
 }
 
+i18n.configure({
+	locales: ['en', 'fr'],
+	directory: __dirname + '/locales',
+});
 
 keystone.start();

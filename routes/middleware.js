@@ -7,7 +7,8 @@
  * you have more middleware you may want to group it as separate
  * modules in your project's /lib directory.
  */
-var _ = require('lodash');
+const _ = require('lodash');
+const i18n = require('i18n');
 
 
 /**
@@ -25,6 +26,14 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Niouzes', key: 'news', href: '/news' },
 	];
 	res.locals.user = req.user;
+	next();
+};
+
+exports.i18n = function (req, res, next) {
+	i18n.setLocale(req, req.params.lang, false);
+	res.locals.__ = res.__ = function () {
+		return i18n.__.apply(req, arguments);
+	};
 	next();
 };
 

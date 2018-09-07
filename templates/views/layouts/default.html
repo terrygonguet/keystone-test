@@ -18,12 +18,6 @@
 			<link href="/keystone/styles/content/editor.min.css" rel="stylesheet">
 		{% endif %}
 
-		{# HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-		   Safely remove this block if you are not targeting IE8 #}
-		<!--[if lt IE 9]>
-			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
-			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
 
 		{# Include template-specific stylesheets by extending the css block #}
 		{% block css %}{% endblock %}
@@ -43,7 +37,7 @@
 				<ul id="navigationList">
 					{% for link in navLinks %}
 					<li class="{{ 'active' if link.key == section else '' }}">
-						<a class="navItems" href="{{ link.href }}">{{ link.label }}</a>
+						<a class="navItems" href="/{{ locale }}{{ link.href }}">{{ __(link.label) }}</a>
 					</li>
 					{% endfor %}
 				</ul>
@@ -71,14 +65,14 @@
 		{# FOOTER #}
 		<div id="footer" class="container">
 			<p>
-				IBD is powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>, Copyright &copy;<span class="currentYear"></span>
+				{{ __("IBD is powered by %s. %s", "<a href=\"http://keystonejs.com\" target=\"_blank\">KeystoneJS</a>", "Copyright &copy;<span class=\"currentYear\"></span>") | safe }}
 				{% if user %}
 					{% if user.canAccessKeystone %}
-						<a class="" href="/keystone">Open Keystone</a>
+						<a class="" href="/keystone">{{ __("Open Keystone") }}</a>
 					{% endif %}
-					<a class="" href="/keystone/signout">Sign Out</a>
+					<a class="" href="/keystone/signout">{{ __("Sign Out") }}</a>
 				{% else %}
-					<a class="" href="/keystone/signin">Sign In</a>
+					<a class="" href="/keystone/signin">{{ __("Sign In") }}</a>
 				{% endif %}
 			</p>
 		</div>
@@ -89,7 +83,7 @@
 		{# jQuery 1.11.3 is included by default, and required by both Bootstrap
 			and the KeystoneJS Content Editor. If you are not targeting IE8,
 			you can upgrade to 2.1.4 (also bundled) for better performance. #}
-		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
+		<script src="/js/jquery/jquery-2.1.4.min.js"></script>
 
 		{# The KeystoneJS Content Editor provides support for ks-editable data attributes,
 			which generate links to edit content for users who can access Keystone #}
