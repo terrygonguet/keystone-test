@@ -6,13 +6,13 @@ let speed = 400; // px/s
 let timeSinceLastTick = 0;
 let timeSinceLastLetter = 0;
 let stage = new createjs.Stage('contactAnim');
+
 let dim = {
 	w: $('#contactAnim').width(),
 	h: $('#contactAnim').height(),
 };
 stage.canvas.width = dim.w;
 stage.canvas.height = dim.h;
-
 let logo = new createjs.Shape();
 let logoPos = $V([dim.w * 0.5, dim.h * 0.5]);
 logo.graphics.f('black').r(-16, -16, 32, 32);
@@ -20,8 +20,20 @@ logo.x = logoPos.e(1);
 logo.y = logoPos.e(2);
 stage.addChild(logo);
 
-let nbUsers = 15 + Math.floor(Math.random() * 5);
+// function resize () {
+// 	let newDim = {
+// 		w: $('#contactAnim').width(),
+// 		h: $('#contactAnim').height(),
+// 	};
+// 	stage.canvas.width = newDim.w;
+// 	stage.canvas.height = newDim.h;
+// 	users.forEach(u => u.set({ x: u.x / dim.w * newDim.w, y: u.x / dim.h * newDim.h }));
+// 	logoPos = $V([newDim.w * 0.5, newDim.h * 0.5]);
+// 	dim = newDim;
+// }
+// document.addEventListener('resize', resize);
 
+let nbUsers = 15 + Math.floor(Math.random() * 5);
 do {
 	let userPos = $V([
 		0.05 * dim.w + Math.random() * 0.9 * dim.w,
@@ -32,7 +44,7 @@ do {
 	if (!isClose && userPos.distanceFrom(logoPos) >= 150) {
 		let userImg = userImgs[Math.floor(Math.random() * userImgs.length)];
 		let user = new createjs.Bitmap(`images/contact/${userImg}.png`);
-		user.set({ x: userPos.e(1), y: userPos.e(2) });
+		user.set({ x: userPos.e(1), y: userPos.e(2), regX: 16, regY: 16 });
 		users.push(user);
 		stage.addChild(user);
 	}
