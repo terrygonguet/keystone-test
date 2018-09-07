@@ -6,12 +6,12 @@
 	<div id="TheReaderWrapper">
 		<h3>{{ news[0].name }}</h3>
 		<h5>Published : {{ news[0]._.publishedAt.format("Do MMM YYYY") }}</h5>
-		<div class="articleContent">{{ news[0].content | safe }}</div>
+		<div class="articleContent activeArticle">{{ news[0].content | safe }}</div>
 	</div>
 	<div id="newsList">
 		{% for article in news %}
 		<div class="articleWrapper">
-			<h3>{{ article.name }}</h3>
+			<h4>{{ article.name }}</h4>
 			<h5>Published : {{ article._.publishedAt.format("Do MMM YYYY") }}</h5>
 			<div class="articleContent">{{ article.synopsis | safe }}</div>
 		</div>
