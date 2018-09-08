@@ -43,7 +43,7 @@ do {
 	let isClose = users.find(u => userPos.distanceFrom($V([u.x, u.y])) <= 60);
 	if (!isClose && userPos.distanceFrom(logoPos) >= 150) {
 		let userImg = userImgs[Math.floor(Math.random() * userImgs.length)];
-		let user = new createjs.Bitmap(`images/contact/${userImg}.png`);
+		let user = new createjs.Bitmap(`/images/contact/${userImg}.png`);
 		user.set({ x: userPos.e(1), y: userPos.e(2), regX: 16, regY: 16 });
 		users.push(user);
 		stage.addChild(user);
@@ -57,7 +57,7 @@ createjs.Ticker.addEventListener('tick', function (e) {
 	timeSinceLastLetter += e.delta;
 	if (timeSinceLastTick > 1000 / 20 && timeSinceLastLetter > 1000 && Math.random() < 0.1) {
 		timeSinceLastTick = timeSinceLastLetter = 0;
-		let letter = new createjs.Bitmap('images/contact/email.png');
+		let letter = new createjs.Bitmap('/images/contact/email.png');
 		let user = users[Math.floor(Math.random() * users.length)];
 		letter.set({
 			x: user.x, y: user.y, regX: 16, regY: 16,
