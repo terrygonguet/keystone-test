@@ -1,10 +1,32 @@
 {
-	"Sign In": "Connection",
-	"Home": "Home",
-	"Contact": "Contact",
-	"Nous: le bon goût": "Nous: le bon goût",
-	"Niouzes": "Niouzes",
-	"IBD is powered by %s. %s": "IBD is powered by %s. %s",
-	"Open Keystone": "Ouvrir Keystone",
-	"Sign Out": "Se déconnecter"
+	"navlinks": {
+		"home": "Home",
+		"contact": "Contact",
+		"about": "Nous: le bon goût",
+		"news": "Niouzes"
+	},
+	"footer": {
+		"powered": "IDB is powered by %s, %s",
+		"open": "Ouvrir Keystone",
+		"signout": "Se déconnecter",
+		"sigin": "Connection",
+		"languages": "Langages"
+	},
+	"title": "IDB",
+	"contact": {
+		"title": "Contactez nous",
+		"hook": "<p>Interesting by Design sont intéressés par ce que vous pensez ! Contactez nous dès maintenant !!</p><p>Nous donner vos opinions sur notre travail nous aide à nous améliorer de nombreuses façons !</br>Ou peut être vous voulez juste entrer en contact avec nous.</br>De toute façon nous sommes pressés de vous entendre !</br>Partagez vos pensées !</p>",
+		"name": "Nom",
+		"email": "Email",
+		"phone": "Téléphone",
+		"optional": "(optionnel)",
+		"whatabout": "Pourquoi nous contactez vous ?",
+		"choose": "(choisissez un)",
+		"justmessage": "Juste un message",
+		"gottaquestion": "J'ai une question",
+		"somthingelse": "Quelque chose d'autre",
+		"message": "Message",
+		"leavemessage": "Laissez nous un message",
+		"send": "Envoyer"
+	}
 }

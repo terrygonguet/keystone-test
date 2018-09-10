@@ -20,12 +20,13 @@ const i18n = require('i18n');
 */
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
-		{ label: 'Home', key: 'home', href: '/' },
-		{ label: 'Contact', key: 'contact', href: '/contact' },
-		{ label: 'Nous: le bon goût', key: 'about', href: '/about' },
-		{ label: 'Niouzes', key: 'news', href: '/news' },
+		{ label: 'navlinks.home', key: 'home', href: '/' },
+		{ label: 'navlinks.contact', key: 'contact', href: '/contact' },
+		{ label: 'navlinks.about', key: 'about', href: '/about' },
+		{ label: 'navlinks.news', key: 'news', href: '/news' },
 	];
 	res.locals.user = req.user;
+	res.locals.url = req.originalUrl;
 	next();
 };
 

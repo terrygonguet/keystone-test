@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>{{ title|default("Proto Keystone") }}</title>
+		<title>{{ title|default(section)|capitalize + " - " + __("title") }}</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -31,8 +31,6 @@
 		</div>
 		{# HEADER #}
 		<div id="header" class="">
-			{# Customise your site"s navigation by changing the navLinks Array in ./routes/middleware.js
-			   ... or completely change this header to suit your design. #}
 			<div role="navigation" id="trainRail">
 				<ul id="navigationList">
 					{% for link in navLinks %}
@@ -46,9 +44,6 @@
 
 		{# BODY #}
 		<div id="bodyContent">
-			{# NOTE:
-			   There is no .container wrapping class around body blocks to allow more flexibility in design.
-			   Remember to include it in your templates when you override the intro and content blocks! #}
 
 			{# The Intro block appears above flash messages (used for temporary information display) #}
 			{% block intro %}{% endblock %}
@@ -65,24 +60,25 @@
 		{# FOOTER #}
 		<div id="footer" class="container">
 			<p>
-				{{ __("IBD is powered by %s. %s", "<a href=\"http://keystonejs.com\" target=\"_blank\">KeystoneJS</a>", "Copyright &copy;<span class=\"currentYear\"></span>") | safe }}
+				{{ __("footer.powered", "<a href=\"http://keystonejs.com\" target=\"_blank\">KeystoneJS</a>", "Copyright &copy;<span class=\"currentYear\"></span>") | safe }}
 				{% if user %}
 					{% if user.canAccessKeystone %}
-						<a class="" href="/keystone">{{ __("Open Keystone") }}</a>
+						<a class="" href="/keystone">{{ __("footer.open") }}</a>
 					{% endif %}
-					<a class="" href="/keystone/signout">{{ __("Sign Out") }}</a>
+					<a class="" href="/keystone/signout">{{ __("footer.signout") }}</a>
 				{% else %}
-					<a class="" href="/keystone/signin">{{ __("Sign In") }}</a>
+					<a class="" href="/keystone/signin">{{ __("footer.signin") }}</a>
 				{% endif %}
+			</p>
+			<p>
+				 {{ __("footer.languages") }} : 
+				<a href="{{ url | replace("/fr/", "/en/") }}">en</a>, 
+				<a href="{{ url | replace("/en/", "/fr/") }}">fr</a>
 			</p>
 		</div>
 
 
 		{# JAVASCRIPT #}
-
-		{# jQuery 1.11.3 is included by default, and required by both Bootstrap
-			and the KeystoneJS Content Editor. If you are not targeting IE8,
-			you can upgrade to 2.1.4 (also bundled) for better performance. #}
 		<script src="/js/jquery/jquery-2.1.4.min.js"></script>
 
 		{# The KeystoneJS Content Editor provides support for ks-editable data attributes,

@@ -7,7 +7,6 @@ const keystone = require('keystone');
 const cons = require('consolidate');
 const nunjucks = require('nunjucks');
 const i18n = require('i18n');
-const cookieParser = require('cookie-parser');
 
 
 // Initialise Keystone with your project's configuration.
@@ -78,6 +77,7 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 i18n.configure({
 	locales: ['en', 'fr'],
 	directory: __dirname + '/locales',
+	objectNotation: true,
 });
 
 keystone.start();
