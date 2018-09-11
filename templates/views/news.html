@@ -6,20 +6,20 @@
 	<div id="TheReaderWrapper">
 		<h3 id="readerName">{{ news[0].name }}</h3>
 		<h5 id="readerPublished">Published : {{ news[0]._.publishedAt.format("Do MMM YYYY") }}</h5>
-		<div class="articleContent activeArticle" id="readerContent">{{ news[0].content | safe }}</div>
+		<div class="articleContent activeArticle" id="readerContent">{{ news[0].localize(locale, "content") | test | safe }}</div>
 	</div>
 	<div id="newsList">
-		{% for article in news %}
+		{% asyncAll article in news %}
 			<div class="articleWrapper {{ "selected" if loop.index == 1 else "" }}" data-id="{{ article._id }}">
 				<h4>{{ article.name }}</h4>
 				<h5>Published : {{ article._.publishedAt.format("Do MMM YYYY") }}</h5>
-				<div class="articleContent">{{ article.synopsis | safe }}</div>
+				<div class="articleContent">{{ article.localize(locale, "synopsis") | test | safe }}</div>
 			</div>
 		{% else %}
 			<p>There's no news.<br/>Sad.</p>
-		{% endfor %}
+		{% endall %}
 	</div>
-	<input type="hidden" id="newsData" value="{{ utils.stringify(news) }}">
+	<input type="hidden" id="newsData" value="{{ news | stringifyNews(locale) }}">
 
 </div>
 {% endblock %}
