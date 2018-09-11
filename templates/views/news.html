@@ -2,24 +2,25 @@
 
 {% block content %}
 
+{% set newsData = news | processnewsAsync(locale) %}
 <div id="newsContainer">
 	<div id="TheReaderWrapper">
 		<h3 id="readerName">{{ news[0].name }}</h3>
-		<h5 id="readerPublished">Published : {{ news[0]._.publishedAt.format("Do MMM YYYY") }}</h5>
-		<div class="articleContent activeArticle" id="readerContent">{{ news[0].localize(locale, "content") | test | safe }}</div>
+		<h5 id="readerPublished">{{ __("news.published") + " : " + news[0]._.publishedAt.format("Do MMM YYYY") }}</h5>
+		<div class="articleContent activeArticle" id="readerContent">{{ newsData[0].content | safe }}</div>
 	</div>
 	<div id="newsList">
-		{% asyncAll article in news %}
+		{% for article in newsData %}
 			<div class="articleWrapper {{ "selected" if loop.index == 1 else "" }}" data-id="{{ article._id }}">
 				<h4>{{ article.name }}</h4>
-				<h5>Published : {{ article._.publishedAt.format("Do MMM YYYY") }}</h5>
-				<div class="articleContent">{{ article.localize(locale, "synopsis") | test | safe }}</div>
+				<h5>{{ __("news.published") + " : " + news[loop.index0]._.publishedAt.format("Do MMM YYYY") }}</h5>
+				<div class="articleContent">{{ article.synopsis | safe }}</div>
 			</div>
 		{% else %}
-			<p>There's no news.<br/>Sad.</p>
-		{% endall %}
+			{{ __("news.nonews") }}
+		{% endfor %}
 	</div>
-	<input type="hidden" id="newsData" value="{{ news | stringifyNews(locale) }}">
+	<input type="hidden" id="newsData" value="{{ utils.stringify(newsData) }}">
 
 </div>
 {% endblock %}

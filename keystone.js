@@ -64,16 +64,13 @@ keystone.set('nav', {
 
 cons.nunjucks.render = function (str, options, fn) {
 	let env = nunjucks.configure('templates/views');
-	env.addFilter('test', async function (p, cb) {
-		cb(null, await p);
-	}, true);
-	env.addFilter('stringifyNews', async function (news, locale, cb) {
+	env.addFilter('processnewsAsync', async function (news, locale, cb) {
 		let data = news.map(n => n.toObject());
 		await Promise.all(news.map(async (n, i) => {
 			data[i].content = await n.localize(locale, 'content');
 			data[i].synopsis = await n.localize(locale, 'synopsis');
 		}));
-		cb(null, JSON.stringify(data));
+		cb(null, data);
 	}, true);
 	env.renderString(str, options, fn);
 };

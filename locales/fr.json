@@ -28,5 +28,9 @@
 		"message": "Message",
 		"leavemessage": "Laissez nous un message",
 		"send": "Envoyer"
+	},
+	"news": {
+    "published": "Publié le",
+    "nonews": "il n'y a pas de news, désolé."
 	}
 }

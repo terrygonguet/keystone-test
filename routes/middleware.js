@@ -35,6 +35,8 @@ exports.i18n = function (req, res, next) {
 	res.locals.__ = res.__ = function () {
 		return i18n.__.apply(req, arguments);
 	};
+	let moment = require('moment');
+	moment.locale(req.params.lang);
 	next();
 };
 

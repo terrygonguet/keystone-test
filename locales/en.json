@@ -29,5 +29,9 @@
 		"gottaquestion": "I've got a question",
 		"leavemessage": "Leave us a message...",
 		"somthingelse": "Something else..."
+	},
+	"news": {
+    "published": "Published",
+    "nonews": "There's no news, sorry."
 	}
 }
