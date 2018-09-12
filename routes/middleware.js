@@ -16,10 +16,10 @@ const i18n = require('i18n');
 */
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
-		{ label: 'navlinks.home', key: 'home', href: '/' },
-		{ label: 'navlinks.contact', key: 'contact', href: '/contact' },
-		{ label: 'navlinks.about', key: 'about', href: '/about' },
-		{ label: 'navlinks.news', key: 'news', href: '/news' },
+		{ label: 'navlinks.home', key: 'home', fa:"fas fa-home" , href: '/' },
+		{ label: 'navlinks.contact', key: 'contact', fa:"fas fa-envelope" , href: '/contact' },
+		{ label: 'navlinks.about', key: 'about', fa:"fas fa-address-card" , href: '/about' },
+		{ label: 'navlinks.news', key: 'news', fa:"fas fa-newspaper" , href: '/news' },
 	];
 	res.locals.user = req.user;
 	res.locals.url = req.originalUrl;

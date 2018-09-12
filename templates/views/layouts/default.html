@@ -35,7 +35,7 @@
 				<ul id="navigationList">
 					{% for link in navLinks %}
 					<li class="{{ 'active' if link.key == section else '' }}">
-						<a class="navItems" href="/{{ locale }}{{ link.href }}">{{ __(link.label) }}</a>
+						<a class="navItems" href="/{{ locale }}{{ link.href }}"><i class="{{ link.fa }}"></i>{{ __(link.label) }}</a>
 					</li>
 					{% endfor %}
 				</ul>

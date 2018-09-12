@@ -53,14 +53,25 @@
 }
 
 
+
 .contactFormWrapper{
 	grid-area: contact;
 	display: inline-flex;
 	flex-direction: column;
 	padding-right: 10%;
 
+	.introWrapper{
+		background-color: white;
+		clip-path: polygon(90% 0, 95% 15%, 100% 95%, 100% 100%, 0 100%, 0% 0);
+	}
+
 	#ListenToUsInContact{
 		padding-left: 1em;
+		background-color: white;
+	}
+
+	h2{
+		background: var(--background-dark);
 	}
 }
 

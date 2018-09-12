@@ -65,7 +65,6 @@ a {
 
 h2{
 	color: var(--text-color-dark1);
-	background: var(--background-dark);
 	font-weight: bolder;
 	display: inline-block;
 	padding: 0 2em;
@@ -116,6 +115,13 @@ h2{
 		.active {
 			border: 1px solid var(--text-color-dark1);
 		}
+	}
+}
+
+.navItems{
+	i{
+		font-size: 1.2em;
+    margin-right: 5px;
 	}
 }
 

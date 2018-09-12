@@ -1,5 +1,24 @@
 /*CSS for Home Page*/
 #HomePageContainer{
-	display: grid;
-	grid-row-gap: 20px;
+	h2{
+		padding:unset;
+	}
+}
+
+.titleQuestion{
+	background: var(--background-dark);
+	padding:5px;
+	padding-right: 20px;
+	clip-path: polygon(0 0, 97% 0, 101% 100%, 0% 100%);
+}
+
+.titleAnswer{
+	font-size: 0.8em;
+	padding: 5px;
+	padding-left: 20px;
+
+	float: right;
+	position: relative;
+	background: var(--background-dark);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%);
 }
