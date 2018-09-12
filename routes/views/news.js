@@ -1,6 +1,6 @@
 var keystone = require('keystone');
 
-exports = module.exports = function (req, res) {
+module.exports = async function (req, res) {
 
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
@@ -9,11 +9,8 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'news';
 
-	keystone.list('News').model.find({ state: 'published' }).sort('-publishedAt').exec(function (err, news) {
-		if (err) throw err;
-		locals.news = news;
-		// Render the view
-		view.render('news');
-	});
+	locals.news = await keystone.list('News').model.find({ state: 'published' }).sort('-publishedAt').exec();
+	locals.defaultNews = req.params.id;
 
+	view.render('news');
 };

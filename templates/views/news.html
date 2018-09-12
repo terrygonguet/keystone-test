@@ -4,15 +4,14 @@
 
 {% set newsData = news | processNewsAsync(locale) %}
 <div id="newsContainer">
-	<div id="TheReaderWrapper">
-		<h3 id="readerName">{{ newsData[0].name }}</h3>
-		{# We use news and not newsData for the date because of the server side formatting #}
-		<h5 id="readerPublished">{{ __("news.published") + " : " + news[0]._.publishedAt.format("Do MMM YYYY") }}</h5>
-		<div class="articleContent activeArticle" id="readerContent">{{ newsData[0].content | safe }}</div>
+	<div id="TheReaderWrapper" data-default-news="{{ defaultNews }}">
+		<h3 id="readerName"></h3>
+		<h5>{{ __("news.published") }} : <span id="readerPublished"></span></h5>
+		<div class="articleContent activeArticle" id="readerContent"></div>
 	</div>
 	<div id="newsList">
 		{% for article in newsData %}
-			<div class="articleWrapper {{ "selected" if loop.index == 1 else "" }}" data-id="{{ article._id }}">
+			<div class="articleWrapper {{ "selected" if (not defaultNews and loop.index == 1) or article._id == defaultNews else "" }}" data-id="{{ article._id }}">
 				<h4>{{ article.name }}</h4>
 				<h5>{{ __("news.published") + " : " + news[loop.index0]._.publishedAt.format("Do MMM YYYY") }}</h5>
 				<div class="articleContent">{{ article.synopsis | safe }}</div>
