@@ -10,7 +10,8 @@
 		"open": "Ouvrir Keystone",
 		"signout": "Se déconnecter",
 		"sigin": "Connection",
-		"languages": "Langages"
+		"languages": "Langages",
+		"signin": "footer.signin"
 	},
 	"title": "IDB",
 	"contact": {
@@ -30,7 +31,7 @@
 		"send": "Envoyer"
 	},
 	"news": {
-    "published": "Publié le",
-    "nonews": "il n'y a pas de news, désolé."
+		"published": "Publié le",
+		"nonews": "il n'y a pas de news, désolé."
 	}
 }

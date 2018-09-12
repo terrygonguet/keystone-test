@@ -8,9 +8,10 @@
 	"footer": {
 		"powered": "IDB is powered by %s, %s",
 		"open": "Open Keystone",
-		"signout": "Sign in",
-		"sigin": "Sign in",
-		"languages": "Languages"
+		"signout": "Sign Out",
+		"sigin": "Sign In",
+		"languages": "Languages",
+		"signin": "footer.signin"
 	},
 	"title": "IDB",
 	"contact": {
@@ -31,7 +32,7 @@
 		"somthingelse": "Something else..."
 	},
 	"news": {
-    "published": "Published",
-    "nonews": "There's no news, sorry."
+		"published": "Published",
+		"nonews": "There's no news, sorry."
 	}
 }

@@ -59,17 +59,33 @@ keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
 	news: 'news',
-	// 'text-node': 'TextNode',
+	TextNode: 'TextNode',
 });
 
+// override render function to load custom filter(s)
 cons.nunjucks.render = function (str, options, fn) {
 	let env = nunjucks.configure('templates/views');
-	env.addFilter('processnewsAsync', async function (news, locale, cb) {
+	env.addFilter('processNewsAsync', async function processNewsAsync (news, locale, cb) {
 		let data = news.map(n => n.toObject());
-		await Promise.all(news.map(async (n, i) => {
-			data[i].content = await n.localize(locale, 'content');
-			data[i].synopsis = await n.localize(locale, 'synopsis');
-		}));
+
+		// find all the keys to fetch and get them
+		let keys = [];
+		for (let article of data) {
+			article.content && keys.push(article.content);
+		}
+		let nodes = await keystone.list('TextNode').model.find({ language: locale, name: { $in: keys } }).exec();
+
+		// replace fetched content and synopsis in the articles
+		for (let node of nodes) {
+			let article = data.find(a => a.content === node.name);
+			if (article) {
+				article.content = node.content;
+				article.synopsis = node.synopsis;
+				article.name = node.title;
+			}
+		}
+
+		// return data to template engine
 		cb(null, data);
 	}, true);
 	env.renderString(str, options, fn);

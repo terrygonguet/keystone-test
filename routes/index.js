@@ -30,12 +30,13 @@ keystone.pre('render', middleware.i18n);
 // Import Route Controllers
 var routes = {
 	views: importRoutes('./views'),
+	guessLanguage: require('./guessLanguage'),
 };
 
 // Setup Route Bindings
-exports = module.exports = function (app) {
+module.exports = function (app) {
 	// Views
-	app.get('/', (req, res) => res.redirect('/en/')); // TODO
+	app.get('/', routes.guessLanguage);
 	app.get('/:lang/', routes.views.index);
 	app.all('/:lang/contact', routes.views.contact);
 	app.all('/:lang/about', routes.views.about);

@@ -13,10 +13,6 @@ const i18n = require('i18n');
 
 /**
 	Initialises the standard view locals
-
-	The included layout depends on the navLinks array to generate
-	the navigation in the header, you may wish to change this array
-	or replace it with your own templates / logic.
 */
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
@@ -30,6 +26,9 @@ exports.initLocals = function (req, res, next) {
 	next();
 };
 
+/**
+ * Initializes internationalization for the request
+ */
 exports.i18n = function (req, res, next) {
 	i18n.setLocale(req, req.params.lang, false);
 	res.locals.__ = res.__ = function () {
