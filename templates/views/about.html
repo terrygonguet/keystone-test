@@ -8,7 +8,7 @@
 			{{ user._.photo.tag({ mode:'fit', width:300 }) | safe }}
 		</div>
 		<h3 class="cardName">{{ user.name.full }}</h3>
-		<p class="cardDescription">{{ user.description }}</p>
+		<p class="cardDescription">{{ __("about.users." + user.email | replace(".", "_")) }}</p>
 	</div>
 	{% endfor %}
 </div>

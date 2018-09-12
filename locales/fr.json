@@ -33,5 +33,11 @@
 	"news": {
 		"published": "Publié le",
 		"nonews": "il n'y a pas de news, désolé."
+	},
+	"about": {
+		"users": {
+			"user@keystonejs_com": "about.users.user@keystonejs_com",
+			"jd@aaa_com": "about.users.jd@aaa_com"
+		}
 	}
 }
