@@ -59,7 +59,6 @@ keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
 	news: 'news',
-	TextNode: 'TextNode',
 });
 
 // override render function to load custom filter(s)

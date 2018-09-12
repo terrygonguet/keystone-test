@@ -2,7 +2,6 @@
 
 {% block content %}
 
-{% set newsData = news | processNewsAsync(locale) %}
 <div id="newsContainer">
 	<div id="TheReaderWrapper" data-default-news="{{ defaultNews }}">
 		<h3 id="readerName"></h3>
@@ -10,17 +9,17 @@
 		<div class="articleContent activeArticle" id="readerContent"></div>
 	</div>
 	<div id="newsList">
-		{% for article in newsData %}
+		{% for article in news %}
 			<div class="articleWrapper {{ "selected" if (not defaultNews and loop.index == 1) or article._id == defaultNews else "" }}" data-id="{{ article._id }}">
 				<h4>{{ article.name }}</h4>
-				<h5>{{ __("news.published") + " : " + news[loop.index0]._.publishedAt.format("Do MMM YYYY") }}</h5>
+				<h5>{{ __("news.published") + " : " + article._.publishedAt.format("Do MMM YYYY") }}</h5>
 				<div class="articleContent">{{ article.synopsis | safe }}</div>
 			</div>
 		{% else %}
 			{{ __("news.nonews") }}
 		{% endfor %}
 	</div>
-	<input type="hidden" id="newsData" value="{{ utils.stringify(newsData) }}">
+	<input type="hidden" id="newsData" value="{{ utils.stringify(news) }}">
 
 </div>
 {% endblock %}
