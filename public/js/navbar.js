@@ -22,6 +22,8 @@ $(document).ready(function () {
 
 	rail.mousemove(onInterraction);
 
+	train.mousemove(function () { target = trainPos; });
+
 	let old = 0;
 	requestAnimationFrame(function raf (time) {
 		let delta = time - old;
