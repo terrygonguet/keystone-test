@@ -12,6 +12,7 @@ News.add({
 	locale: { type: Types.Text, required: true, initial: true, label: 'Language' },
 	content: { type: Types.Html, wysiwyg: true, initial: false },
 	synopsis: { type: Types.Html, wysiwyg: true, initial: false },
+	tags: { type: Types.TextArray },
 	state: { type: Types.Select, options: [
 		{ label: 'Draft', value: 'draft' },
 		{ label: 'Published', value: 'published' },

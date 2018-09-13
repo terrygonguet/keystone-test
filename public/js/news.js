@@ -34,9 +34,7 @@ $(document).ready(function () {
 			}, {
 				duration: 700,
 				done: () => {
-					$('#readerName').text(article.name);
-					$('#readerPublished').text(moment(article.publishedAt).format('Do MMM YYYY'));
-					$('#readerContent').html(article.content);
+					insertContent(article);
 					clone.fadeOut(() => clone.detach());
 
 					setIdInURL(_id);
@@ -46,6 +44,7 @@ $(document).ready(function () {
 
 	function setIdInURL (_id) {
 		let path = location.pathname;
+		if (path.includes('/tags/')) return; // don't do it if we're displaying tags
 		if (path.endsWith('/news')) {
 			path += '/' + _id;
 		} else if (path.endsWith('/news/')) {
@@ -56,6 +55,16 @@ $(document).ready(function () {
 		history.pushState(null, '', path);
 	}
 
+	function insertContent (article) {
+		$('#readerName').text(article.name);
+		$('#readerPublished').text(moment(article.publishedAt).format('Do MMM YYYY'));
+		$('#readerContent').html(article.content);
+		$('#TheReaderWrapper').css('color', 'var(--text-color)');
+		$('.tags').empty().append(
+			article.tags.map(t => $(`<li><a href="news/tags/${t}">${t}</a></li>`))
+		);
+	}
+
 	// load default article or first
 	let _id = $('#TheReaderWrapper').data('default-news');
 	let article = _id ? data.find(a => a._id === _id) : data[0];
@@ -64,8 +73,5 @@ $(document).ready(function () {
 		$('.articleWrapper:eq(0)').addClass('selected');
 		setIdInURL(article._id);
 	}
-	$('#readerName').text(article.name);
-	$('#readerPublished').text(moment(article.publishedAt).format('Do MMM YYYY'));
-	$('#readerContent').html(article.content);
-	$('#TheReaderWrapper').css('color', 'var(--text-color)');
+	insertContent(article);
 });

@@ -38,10 +38,11 @@ module.exports = function (app) {
 	// Views
 	app.get('/', routes.guessLanguage);
 	app.get('/:lang/', routes.views.index);
-	app.all('/:lang/contact', routes.views.contact);
-	app.all('/:lang/about', routes.views.about);
-	app.all('/:lang/news', routes.views.news);
-	app.all('/:lang/news/:id', routes.views.news);
+	app.get('/:lang/contact', routes.views.contact);
+	app.get('/:lang/about', routes.views.about);
+	app.get('/:lang/news', routes.views.news);
+	app.get('/:lang/news/:id', routes.views.news);
+	app.get('/:lang/news/tags/:tag', routes.views.tags);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
