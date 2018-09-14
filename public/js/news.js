@@ -27,7 +27,6 @@ $(document).ready(function () {
 				left: readerOffset.left,
 				width: reader.width(),
 				height: reader.height(),
-				backgroundColor: reader.css('background-color'),
 				color: reader.css('color'),
 				paddingRight: 0,
 				paddingBottom: 0,
