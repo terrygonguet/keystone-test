@@ -32,7 +32,8 @@
 	},
 	"news": {
 		"published": "Publié le",
-		"nonews": "il n'y a pas de news, désolé."
+		"nonews": "il n'y a pas de news, désolé.",
+		"by": "Par"
 	},
 	"about": {
 		"users": {

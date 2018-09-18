@@ -33,7 +33,8 @@
 	},
 	"news": {
 		"published": "Published",
-		"nonews": "There's no news, sorry."
+		"nonews": "There's no news, sorry.",
+		"by": "By"
 	},
 	"about": {
 		"users": {
