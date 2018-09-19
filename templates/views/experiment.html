@@ -1,0 +1,33 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+{% set yesPercent = counts["true"] / (counts["false"] + counts["true"]) * 100 if counts["false"] + counts["true"] > 0 else 50%}
+<div id="ExperimentContainer">
+	<div id="interestometer">
+		<div id="name">Interest O'Meter</div>
+		<div id="currentExperiment">
+			Current experiment : 
+			<span id="title">{{ experiment.title }}</span>
+			<a href="javascript:void(0);" id="btnDescription">Description</a> - 
+			<a href="{{ experiment.url }}">Original site</a>
+		</div>
+		<div id="question">
+			<span>Is this experiment interesting ?</span>
+			<div id="meter">
+				<div id="bar" style="width:{{ yesPercent }}%">
+					<span id="btnYes">Yes</span>
+				</div>
+				<span id="btnNo">No</span>
+			</div>
+		</div>
+	</div>
+	<iframe id="experiment" src="{{ experiment.url }}" title="{{ experiment.title }}"></iframe>
+	<div id="popup">
+		<div id="description">{{ experiment.description }}</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="/js/experiment.js"></script>
+{% endblock %}

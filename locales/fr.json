@@ -3,7 +3,8 @@
 		"home": "Home",
 		"contact": "Contact",
 		"about": "Nous: le bon goût",
-		"news": "Niouzes"
+		"news": "Niouzes",
+		"experiment": "Expérimentation"
 	},
 	"footer": {
 		"powered": "IDB is powered by %s, %s",

@@ -3,7 +3,8 @@
 		"contact": "Contact",
 		"about": "About",
 		"news": "News",
-		"home": "Home"
+		"home": "Home",
+		"experiment": "Experiment"
 	},
 	"footer": {
 		"powered": "IDB is powered by %s, %s",
