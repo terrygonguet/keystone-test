@@ -10,9 +10,8 @@
 		"powered": "IDB is powered by %s, %s",
 		"open": "Open Keystone",
 		"signout": "Sign Out",
-		"sigin": "Sign In",
-		"languages": "Languages",
-		"signin": "footer.signin"
+		"signin": "Sign In",
+		"languages": "Languages"
 	},
 	"title": "IDB",
 	"contact": {
