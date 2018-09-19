@@ -19,7 +19,7 @@ module.exports = async function (req, res) {
 	// item in the header navigation.
 	locals.section = 'experiment';
 	locals.experiment = {
-		url: 'http://isterryawake.gonguet.com/',
+		url: 'https://isterryawake.gonguet.com/',
 		title: 'Is Terry Awake ?',
 		description: {
 			en: 'A simple website to tell if Terry is currently awake (which is sometimes surprizing).',
