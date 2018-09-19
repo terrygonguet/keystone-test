@@ -39,6 +39,7 @@
 				align-items: center;
 				justify-content: space-between;
 				margin-left: 1em;
+				position: relative;
 
 				#bar {
 					position: relative;
@@ -54,10 +55,16 @@
 					-ms-user-select: none;
 					-moz-user-select: none;
 					-webkit-user-select: none;
+					position: absolute;
 				}
 
-				span:nth-child(1) {
+				#btnYes {
 					color: var(--text-color-dark);
+					left: 0;
+				}
+
+				#btnNo {
+					right: 0;
 				}
 			}
 		}

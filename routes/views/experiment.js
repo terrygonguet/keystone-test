@@ -21,7 +21,10 @@ module.exports = async function (req, res) {
 	locals.experiment = {
 		url: 'http://isterryawake.gonguet.com/',
 		title: 'Is Terry Awake ?',
-		description: 'A simple website to tell if Terry is currently awake (which is sometimes surprizing).',
+		description: {
+			en: 'A simple website to tell if Terry is currently awake (which is sometimes surprizing).',
+			fr: 'Un site simple pour voir si Terry est réveillé en direct (ce qui est des fois surprenant).',
+		},
 	};
 	locals.counts = data;
 

@@ -6,24 +6,23 @@
 	<div id="interestometer">
 		<div id="name">Interest O'Meter</div>
 		<div id="currentExperiment">
-			Current experiment : 
+			{{ __("experiment.current") }} : 
 			<span id="title">{{ experiment.title }}</span>
-			<a href="javascript:void(0);" id="btnDescription">Description</a> - 
-			<a href="{{ experiment.url }}">Original site</a>
+			<a href="javascript:void(0);" id="btnDescription">{{ __("experiment.description") }}</a> - 
+			<a href="{{ experiment.url }}">{{ __("experiment.origin") }}</a>
 		</div>
 		<div id="question">
-			<span>Is this experiment interesting ?</span>
+			<span>{{ __("experiment.interesting?") }}</span>
 			<div id="meter">
-				<div id="bar" style="width:{{ yesPercent }}%">
-					<span id="btnYes">Yes</span>
-				</div>
-				<span id="btnNo">No</span>
+				<div id="bar" style="width:{{ yesPercent }}%"></div>
+				<span id="btnYes">{{ __("experiment.yes") }}</span>
+				<span id="btnNo">{{ __("experiment.no") }}</span>
 			</div>
 		</div>
 	</div>
 	<iframe id="experiment" src="{{ experiment.url }}" title="{{ experiment.title }}"></iframe>
 	<div id="popup">
-		<div id="description">{{ experiment.description }}</div>
+		<div id="description">{{ experiment.description[locale] }}</div>
 	</div>
 </div>
 {% endblock %}

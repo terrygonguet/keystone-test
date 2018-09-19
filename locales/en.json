@@ -42,5 +42,13 @@
 			"user@keystonejs_com": "about.users.user@keystonejs_com",
 			"jd@aaa_com": "about.users.jd@aaa_com"
 		}
+	},
+	"experiment": {
+		"current": "Current experiment",
+		"description": "Description",
+		"origin": "Original site",
+		"interesting?": "is this experiment interesting ?",
+		"yes": "Yes",
+		"no": "No"
 	}
 }
