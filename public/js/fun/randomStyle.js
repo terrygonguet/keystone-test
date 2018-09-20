@@ -15,6 +15,7 @@
 		document.documentElement.style.setProperty(`--${cssvar}`, color);
 		colors[cssvar] = color;
 	}
+	console.log(colors);
 
 	function rand () {
 		return Math.floor(Math.random() * 255);

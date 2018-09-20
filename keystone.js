@@ -43,6 +43,7 @@ keystone.set('locals', {
 	env: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable,
+	moment: require('moment'),
 });
 
 // cloudinary options
