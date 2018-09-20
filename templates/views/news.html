@@ -5,10 +5,10 @@
 <div id="newsContainer">
 	<div id="TheReaderWrapper" data-default-news="{{ defaultNews }}">
 		<h3 id="readerName"></h3>
+		<ul id="tagsList"></ul>
 		<h5>{{ __("news.published") }} : <span id="readerPublished"></span></h5>
 		<div class="articleContent activeArticle" id="readerContent"></div>
-		<a href="contact">{{ __("news.by") }} <span id="readerAuthor"></span></a>
-		<ul class="articleContent tags"></ul>
+		<a id="authorName" href="contact">{{ __("news.by") }} <span id="readerAuthor"></span></a>
 	</div>
 	<div id="newsList">
 		{% for article in news %}
