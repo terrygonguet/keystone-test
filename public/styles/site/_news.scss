@@ -26,6 +26,7 @@ h5{
 
 #readerContent{
 	border-top: solid var(--accent-color);
+	border-bottom: solid var(--accent-color);
 }
 
 .articleWrapper{
@@ -82,5 +83,5 @@ h5{
 }
 
 #authorName{
-	border-top: solid var(--accent-color);
+	float:right;
 }
