@@ -64,9 +64,17 @@ $(document).ready(function () {
 			$('#readerAuthor').text('Anonymous');
 		}
 		$('#TheReaderWrapper').css('color', 'var(--text-color)');
-		$('.tags').empty().append(
-			article.tags.map(t => $(`<li><a href="news/tags/${t}">${t}</a></li>`))
+		$('#tagsList').empty().append(
+			article.tags.map(t => $(`<li><a href="news/tags/${t}" id="${t}">${t}</a></li>`))
 		);
+
+		//Add css to selected tag
+		let elems = location.pathname.split('/'); //get pathname and split it
+		elemsSize = elems.length;
+		if(elems[elemsSize-2] == "tags"){ // tags is just before tag name then :
+			let tag = elems.pop(); // get last tag
+			$('#'+tag).addClass("selectedTag") // set the tag as selected tag
+		}
 	}
 
 	// load default article or first

@@ -19,7 +19,7 @@ Color Chart blue green peace:
   --background:       #E0E0E0;
   --text-color:       #111111;
   --background-dark:  #111111;
-  --text-color-dark1: #E0E0E0;
+  --text-color-dark:  #E0E0E0;
   --text-color-dark2: #777777;
   --accent-color:     #F62217; }
 
@@ -52,7 +52,7 @@ body {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
-  grid-template-areas: "brand header" "main main" "footer footer";
+  grid-template-areas: "brand header" "main main" "footer footer";
   background-color: var(--background);
   padding: 0px;
   margin: 0px;
@@ -68,7 +68,7 @@ a {
     color: var(--text-color); }
 
 h2 {
-  color: var(--text-color-dark1);
+  color: var(--text-color-dark);
   font-weight: bolder;
   display: inline-block;
   padding: 0 2em;
@@ -79,7 +79,7 @@ h2 {
   padding: 10px;
   margin: 10px;
   background-color: var(--background-dark);
-  color: var(--text-color-dark1);
+  color: var(--text-color-dark);
   font-size: 3em; }
 
 /*CSS for header + nav bar*/
@@ -90,7 +90,7 @@ h2 {
   align-items: flex-end;
   padding: 1em; }
   #header a {
-    color: var(--text-color-dark1); }
+    color: var(--text-color-dark); }
     #header a:hover {
       color: var(--accent-color); }
   #header #trainRail {
@@ -105,7 +105,7 @@ h2 {
     #header #navigationList li {
       padding: 0.5em; }
     #header #navigationList .active {
-      border: 1px solid var(--text-color-dark1); }
+      border: 1px solid var(--text-color-dark); }
 
 .navItems i {
   font-size: 1.2em;
@@ -126,7 +126,7 @@ h2 {
   align-items: center;
   flex-direction: column; }
   #footer a {
-    color: var(--text-color-dark1); }
+    color: var(--text-color-dark); }
     #footer a:hover {
       color: var(--accent-color); }
 
@@ -180,7 +180,7 @@ h2 {
   display: inline-flex;
   flex-direction: column;
   background-color: var(--background-dark);
-  color: var(--text-color-dark1);
+  color: var(--text-color-dark);
   font-size: 1.2em;
   font-weight: bold;
   padding: 1em; }
@@ -194,7 +194,7 @@ h2 {
   .contactForm button {
     border: var(--background) solid 0.3em;
     background-color: var(--background-dark);
-    color: var(--text-color-dark1);
+    color: var(--text-color-dark);
     font-weight: bold;
     margin-top: 1em;
     padding: 0.5em;
@@ -272,7 +272,7 @@ h4 {
   margin: 0px 0px 5px 0px; }
 
 h5 {
-  margin: 0px 0px 10px 10px; }
+  margin: 0px 0px 0.5em 0.5em; }
 
 #newsContainer {
   display: grid;
@@ -286,6 +286,9 @@ h5 {
   #TheReaderWrapper h3 {
     font-size: 2em;
     margin: 5px; }
+
+#readerContent {
+  border-top: solid var(--accent-color); }
 
 .articleWrapper {
   background-color: var(--background-dark);
@@ -305,3 +308,100 @@ h5 {
 #newsList {
   overflow: auto;
   grid-column-start: -2; }
+
+#tagsList {
+  list-style: none;
+  display: inline-flex; }
+  #tagsList a {
+    background-color: var(--background-dark);
+    color: var(--text-color-dark);
+    padding: 0.5em;
+    margin-right: 15px; }
+  #tagsList a:hover {
+    background-color: var(--background);
+    color: var(--text-color);
+    border: solid 2px var(--background-dark);
+    margin-right: 11px; }
+  #tagsList a:active {
+    background-color: var(--background-dark);
+    color: var(--text-color-dark);
+    padding: 0.5em;
+    margin-right: 15px;
+    border: none; }
+  #tagsList .selectedTag {
+    color: var(--accent-color); }
+
+#authorName {
+  border-top: solid var(--accent-color); }
+
+/*CSS for Home Page*/
+#ExperimentContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5vh auto;
+  grid-gap: 0.5em;
+  height: 100%; }
+  #ExperimentContainer #interestometer {
+    background: var(--background-dark);
+    color: var(--text-color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+    #ExperimentContainer #interestometer a {
+      color: var(--text-color-dark); }
+    #ExperimentContainer #interestometer a:hover {
+      color: var(--accent-color); }
+    #ExperimentContainer #interestometer #name {
+      font-weight: bold;
+      font-size: 2em; }
+    #ExperimentContainer #interestometer #question {
+      display: flex;
+      align-items: center; }
+      #ExperimentContainer #interestometer #question #meter {
+        width: 200px;
+        height: 1.2em;
+        background: var(--background);
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 1em;
+        position: relative; }
+        #ExperimentContainer #interestometer #question #meter #bar {
+          position: relative;
+          background: var(--text-color-dark2);
+          height: 100%; }
+        #ExperimentContainer #interestometer #question #meter span {
+          margin: 2px;
+          font-weight: bold;
+          cursor: pointer;
+          user-select: none;
+          -ms-user-select: none;
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          position: absolute; }
+        #ExperimentContainer #interestometer #question #meter #btnYes {
+          color: var(--text-color-dark);
+          left: 0; }
+        #ExperimentContainer #interestometer #question #meter #btnNo {
+          right: 0; }
+  #ExperimentContainer #experiment {
+    width: 100%;
+    height: 100%; }
+  #ExperimentContainer #popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0; }
+    #ExperimentContainer #popup #description {
+      background: var(--background);
+      color: var(--text-color);
+      max-width: 35vw;
+      padding: 2em; }

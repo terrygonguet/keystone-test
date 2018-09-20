@@ -4,7 +4,7 @@ h4{
 }
 
 h5{
-	margin: 0px 0px 10px 10px;
+	margin: 0px 0px 0.5em 0.5em;
 }
 
 #newsContainer{
@@ -22,6 +22,10 @@ h5{
 		font-size: 2em;
 		margin: 5px;
 	}
+}
+
+#readerContent{
+	border-top: solid var(--accent-color);
 }
 
 .articleWrapper{
@@ -45,4 +49,38 @@ h5{
 #newsList{
 	overflow: auto;
 	grid-column-start: -2;
+}
+
+#tagsList{
+	list-style: none;
+	display: inline-flex;
+
+	a{
+		background-color: var(--background-dark);
+    color: var(--text-color-dark);
+		padding: 0.5em;
+		margin-right: 15px;
+	}
+
+	a:hover{
+		background-color:  var(--background);
+    color: var(--text-color);
+		border: solid 2px  var(--background-dark);
+		margin-right: 11px;
+	}
+
+	a:active{
+		background-color: var(--background-dark);
+    color: var(--text-color-dark);
+		padding: 0.5em;
+		margin-right: 15px;
+		border:none;
+	}
+	.selectedTag{
+		color: var(--accent-color);
+	}
+}
+
+#authorName{
+	border-top: solid var(--accent-color);
 }
