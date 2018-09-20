@@ -85,14 +85,4 @@ $(document).ready(function () {
 			$(`#tagsList a[data-tag=${tag}]`).addClass('selectedTag'); // set the tag as selected tag
 		}
 	}
-
-	// load default article or first
-	let _id = $('#TheReaderWrapper').data('default-news');
-	let article = _id ? data.find(a => a._id === _id) : data[0];
-	if (!article) {
-		article = data[0];
-		$('.articleWrapper:eq(0)').addClass('selected');
-		setIdInURL(article._id);
-	}
-	insertContent(article);
 });

@@ -10,7 +10,8 @@ module.exports = async function (req, res) {
 	locals.section = 'news';
 
 	locals.news = await keystone.list('News').model.find({ state: 'published', locale: req.params.lang }).sort('-publishedAt').populate('author').exec();
-	locals.defaultNews = req.params.id;
+	let id = req.params.id;
+	locals.defaultNews = locals.news.find(n => n._id == id) || locals.news[0];
 
 	view.render('news');
 };
