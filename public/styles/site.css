@@ -134,25 +134,23 @@ h2 {
 #HomePageTitle h2 {
   padding: unset; }
 
-#HomePageContainer {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 30px; }
-  #HomePageContainer h2 {
-    padding: unset; }
+#HomePageContainer h2 {
+  padding: unset; }
 
-.homePageListItems {
+.homePageItem {
   grid-column-start: 1;
-  color: var(--text-color-dark1); }
-  .homePageListItems h3 {
+  color: var(--text-color-dark1);
+  text-align: center; }
+  .homePageItem h3 {
     background: var(--background-dark);
+    color: var(--text-color-dark);
     padding: 5px;
     padding-right: 25px;
+    padding-left: 25px;
     margin: 0px;
     display: inline-block;
-    clip-path: polygon(0 0, 92% 0, 100% 100%, 0% 100%); }
-  .homePageListItems div {
-    background: var(--background-dark);
+    clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%); }
+  .homePageItem div {
     padding: 5px; }
 
 .titleQuestion {
@@ -288,7 +286,8 @@ h5 {
     margin: 5px; }
 
 #readerContent {
-  border-top: solid var(--accent-color); }
+  border-top: solid var(--accent-color);
+  border-bottom: solid var(--accent-color); }
 
 .articleWrapper {
   background-color: var(--background-dark);
@@ -332,7 +331,7 @@ h5 {
     color: var(--accent-color); }
 
 #authorName {
-  border-top: solid var(--accent-color); }
+  float: right; }
 
 /*CSS for Home Page*/
 #ExperimentContainer {
