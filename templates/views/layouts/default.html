@@ -95,14 +95,20 @@
 (function () {
 	$(".currentYear").text((new Date()).getFullYear());
 	let keys = "";
+	let codes = {
+		konami: 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba',
+		editor: 'pimpme',
+	}
 	document.addEventListener('keydown', function (e) {
 		keys += e.key;
-		if (keys.endsWith('ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba')) {
-			let konami = document.createElement('script');
-			konami.src = '/js/konami.js';
-			document.head.appendChild(konami);
+		for(let code in codes) {
+			if (keys.endsWith(codes[code])) {
+				let script = document.createElement('script');
+				script.src = `/js/${code}.js`;
+				document.head.appendChild(script);
+			}
+			keys = keys.substring((keys.length > 100 ? keys.length - 100 : 0));
 		}
-		keys = keys.substring((keys.length > 100 ? keys.length - 100 : 0));
 	});
 })();
 		</script>
