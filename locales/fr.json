@@ -37,7 +37,8 @@
 	"about": {
 		"users": {
 			"user@keystonejs_com": "about.users.user@keystonejs_com",
-			"jd@aaa_com": "about.users.jd@aaa_com"
+			"jd@aaa_com": "about.users.jd@aaa_com",
+			"jamesk@lol_com": "about.users.jamesk@lol_com"
 		}
 	}
 }

@@ -1,17 +1,67 @@
 {% extends "layouts/default.html" %}
 
 {% block content %}
-<div id="HomePageContainer">
+<div id="HomePageTitle">
 	<h2><span class="titleQuestion">Looking for something interesting ?</span></br><span class="titleAnswer">You're in the Good Place</span></h2>
+</div>
+	
+<div id="HomePageContainer">
+	<div class="homePageListItems">
+		<h3>We are web dev</h3>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+			Phasellus pretium, urna ac finibus laoreet, odio libero rutrum ante, vitae dapibus sapien felis sed nibh.
+			Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam fermentum quam metus, sit amet interdum velit vulputate eu. 
+			Integer interdum, dui et efficitur commodo, risus ipsum condimentum purus, pulvinar rhoncus nibh quam sit amet enim. Pellentesque lobortis purus in felis tempor sollicitudin. 
+			Morbi id neque dapibus, faucibus metus nec, rhoncus erat. Proin nec libero a tortor malesuada finibus. Proin et metus semper, luctus nibh eu, venenatis metus.
+		</div>
+	</div>
 
-	<p>This is our new <a href="http://keystonejs.com" target="_blank">KeystoneJS</a> website.</p>
-	<p>
-		It includes the latest versions of
-		<a href="http://getbootstrap.com/" target="_blank">Bootstrap (though I don't care)</a>
-		and <a href="http://www.jquery.com/" target="_blank">jQuery (now I care)</a>.
-	</p>
-	<p>Visit the <a href="http://keystonejs.com/guide" target="_blank">Getting Started</a> guide to learn how to customise it.</p>
-	<hr>
+	<div class="homePageListItems">
+			<h3>The Keystone to success</h3>
+			<div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				Phasellus pretium, urna ac finibus laoreet, odio libero rutrum ante, vitae dapibus sapien felis sed nibh.
+				Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam fermentum quam metus, sit amet interdum velit vulputate eu. 
+				Integer interdum, dui et efficitur commodo, risus ipsum condimentum purus, pulvinar rhoncus nibh quam sit amet enim. Pellentesque lobortis purus in felis tempor sollicitudin. 
+				Morbi id neque dapibus, faucibus metus nec, rhoncus erat. Proin nec libero a tortor malesuada finibus. Proin et metus semper, luctus nibh eu, venenatis metus.
+			</div>
+	</div>
+
+	<div class="homePageListItems">
+		<h3>Some title sample</h3>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+			Phasellus pretium, urna ac finibus laoreet, odio libero rutrum ante, vitae dapibus sapien felis sed nibh.
+			Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam fermentum quam metus, sit amet interdum velit vulputate eu. 
+			Integer interdum, dui et efficitur commodo, risus ipsum condimentum purus, pulvinar rhoncus nibh quam sit amet enim. Pellentesque lobortis purus in felis tempor sollicitudin. 
+			Morbi id neque dapibus, faucibus metus nec, rhoncus erat. Proin nec libero a tortor malesuada finibus. Proin et metus semper, luctus nibh eu, venenatis metus.
+		</div>
+	</div>
+
+	<div class="homePageListItems">
+		<h3>Some title sample</h3>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+			Phasellus pretium, urna ac finibus laoreet, odio libero rutrum ante, vitae dapibus sapien felis sed nibh.
+			Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam fermentum quam metus, sit amet interdum velit vulputate eu. 
+			Integer interdum, dui et efficitur commodo, risus ipsum condimentum purus, pulvinar rhoncus nibh quam sit amet enim. Pellentesque lobortis purus in felis tempor sollicitudin. 
+			Morbi id neque dapibus, faucibus metus nec, rhoncus erat. Proin nec libero a tortor malesuada finibus. Proin et metus semper, luctus nibh eu, venenatis metus.
+		</div>
+	</div>
+
+	<div class="homePageListItems">
+		<h3>Some title sample</h3>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+			Phasellus pretium, urna ac finibus laoreet, odio libero rutrum ante, vitae dapibus sapien felis sed nibh.
+			Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam fermentum quam metus, sit amet interdum velit vulputate eu. 
+			Integer interdum, dui et efficitur commodo, risus ipsum condimentum purus, pulvinar rhoncus nibh quam sit amet enim. Pellentesque lobortis purus in felis tempor sollicitudin. 
+			Morbi id neque dapibus, faucibus metus nec, rhoncus erat. Proin nec libero a tortor malesuada finibus. Proin et metus semper, luctus nibh eu, venenatis metus.
+		</div>
+	</div>
+
+
 	{% if user and user.canAccessKeystone %}
 		<p>
 			<a href="/keystone" class="btn btn-lg btn-primary">Open the Admin UI</a>
@@ -23,10 +73,5 @@
 			to use the Admin UI.
 		</p>
 	{% endif %}
-	<hr>
-	<p>
-		Remember to <a href="https://github.com/keystonejs/keystone" target="_blank">Star KeystoneJS on GitHub</a> and
-		<a href="https://twitter.com/keystonejs" target="_blank">follow @keystonejs</a> on twitter for updates.
-	</p>
 </div>
 {% endblock %}

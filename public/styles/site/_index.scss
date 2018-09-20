@@ -1,7 +1,36 @@
 /*CSS for Home Page*/
-#HomePageContainer{
+#HomePageTitle{
 	h2{
 		padding:unset;
+	}
+}
+
+#HomePageContainer{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 30px;
+
+	h2{
+		padding:unset;
+	}
+}
+
+.homePageListItems{
+	grid-column-start: 1;
+	color: var(--text-color-dark1);
+
+	h3{
+		background: var(--background-dark);
+    padding: 5px;
+    padding-right: 25px;
+    margin: 0px;
+		display: inline-block;
+		clip-path: polygon(0 0, 92% 0, 100% 100%, 0% 100%);
+	}
+
+	div{
+		background: var(--background-dark);
+		padding:5px;
 	}
 }
 

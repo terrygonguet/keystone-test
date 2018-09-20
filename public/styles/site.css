@@ -131,8 +131,29 @@ h2 {
       color: var(--accent-color); }
 
 /*CSS for Home Page*/
-#HomePageContainer h2 {
+#HomePageTitle h2 {
   padding: unset; }
+
+#HomePageContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 30px; }
+  #HomePageContainer h2 {
+    padding: unset; }
+
+.homePageListItems {
+  grid-column-start: 1;
+  color: var(--text-color-dark1); }
+  .homePageListItems h3 {
+    background: var(--background-dark);
+    padding: 5px;
+    padding-right: 25px;
+    margin: 0px;
+    display: inline-block;
+    clip-path: polygon(0 0, 92% 0, 100% 100%, 0% 100%); }
+  .homePageListItems div {
+    background: var(--background-dark);
+    padding: 5px; }
 
 .titleQuestion {
   background: var(--background-dark);
@@ -267,7 +288,7 @@ h5 {
     margin: 5px; }
 
 .articleWrapper {
-  background-color: #111111;
+  background-color: var(--background-dark);
   color: #e0e0e0;
   padding: 20px;
   margin-bottom: 10px;
