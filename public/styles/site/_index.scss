@@ -18,6 +18,9 @@
 	grid-column-start: 1;
 	color: var(--text-color-dark1);
 	text-align: center;
+	border-top: solid #111111;
+	padding-bottom: 40px;
+	background: linear-gradient(#111111b8,#ffffff00);
 
 	h3{
 		background: var(--background-dark);

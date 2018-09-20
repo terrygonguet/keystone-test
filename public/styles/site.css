@@ -21,6 +21,7 @@ Color Chart blue green peace:
   --background-dark:  #111111;
   --text-color-dark:  #E0E0E0;
   --text-color-dark2: #777777;
+  --background-light: #FFFFFF;
   --accent-color:     #F62217; }
 
 /*Importing font here*/
@@ -50,9 +51,9 @@ body {
   font-size: var(--font-size-base);
   color: var(--text-color);
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr auto;
-  grid-template-areas: "brand header" "main main" "footer footer";
+  grid-template-areas: "brand header header" "main main main" "footer footer language";
   background-color: var(--background);
   padding: 0px;
   margin: 0px;
@@ -81,6 +82,24 @@ h2 {
   background-color: var(--background-dark);
   color: var(--text-color-dark);
   font-size: 3em; }
+
+#languageWrapper {
+  grid-area: language;
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--background-dark);
+  color: var(--text-color-dark); }
+  #languageWrapper i {
+    font-size: 3em;
+    color: var(--text-color-dark); }
+  #languageWrapper a {
+    color: var(--text-color-dark); }
+
+#languageButton {
+  background-color: var(--background-dark); }
+
+#languagePicker {
+  position: absolute; }
 
 /*CSS for header + nav bar*/
 #header {
@@ -140,7 +159,10 @@ h2 {
 .homePageItem {
   grid-column-start: 1;
   color: var(--text-color-dark1);
-  text-align: center; }
+  text-align: center;
+  border-top: solid #111111;
+  padding-bottom: 40px;
+  background: linear-gradient(#111111b8, #ffffff00); }
   .homePageItem h3 {
     background: var(--background-dark);
     color: var(--text-color-dark);
@@ -278,9 +300,8 @@ h5 {
   grid-template-rows: minmax(200px, 750px); }
 
 #TheReaderWrapper {
-  background-color: white;
-  padding: 1em;
-  color: transparent; }
+  background-color: var(--background-light);
+  padding: 1em; }
   #TheReaderWrapper h3 {
     font-size: 2em;
     margin: 5px; }
@@ -291,7 +312,7 @@ h5 {
 
 .articleWrapper {
   background-color: var(--background-dark);
-  color: #e0e0e0;
+  color: var(--text-color-dark);
   padding: 20px;
   margin-bottom: 10px;
   margin-left: 30px;
@@ -356,34 +377,29 @@ h5 {
     #ExperimentContainer #interestometer #question {
       display: flex;
       align-items: center; }
+      #ExperimentContainer #interestometer #question > :first-child {
+        margin-right: 1em; }
+      #ExperimentContainer #interestometer #question a {
+        user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none; }
       #ExperimentContainer #interestometer #question #meter {
-        width: 200px;
-        height: 1.2em;
+        width: 80px;
+        height: 40px;
         background: var(--background);
         color: var(--text-color);
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        margin-left: 1em;
-        position: relative; }
+        justify-content: space-around;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px; }
         #ExperimentContainer #interestometer #question #meter #bar {
+          transform-origin: 0 100%;
           position: relative;
-          background: var(--text-color-dark2);
-          height: 100%; }
-        #ExperimentContainer #interestometer #question #meter span {
-          margin: 2px;
-          font-weight: bold;
-          cursor: pointer;
-          user-select: none;
-          -ms-user-select: none;
-          -moz-user-select: none;
-          -webkit-user-select: none;
-          position: absolute; }
-        #ExperimentContainer #interestometer #question #meter #btnYes {
-          color: var(--text-color-dark);
-          left: 0; }
-        #ExperimentContainer #interestometer #question #meter #btnNo {
-          right: 0; }
+          background: var(--accent-color);
+          height: 100%;
+          width: 2px; }
   #ExperimentContainer #experiment {
     width: 100%;
     height: 100%; }

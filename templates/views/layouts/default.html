@@ -32,7 +32,7 @@
 			<i class="fas fa-american-sign-language-interpreting"></i>
 		</div>
 		{# HEADER #}
-		<div id="header" class="">
+		<div id="header">
 			<div role="navigation" id="trainRail">
 				<ul id="navigationList">
 					{% for link in navLinks %}
@@ -72,11 +72,17 @@
 					<a class="" href="/keystone/signin">{{ __("footer.signin") }}</a>
 				{% endif %}
 			</p>
-			<p>
-				 {{ __("footer.languages") }} : 
-				<a href="{{ url | replace("/fr/", "/en/") }}">en</a>, 
+			
+		</div>
+		<div id="languageWrapper">
+			<div id="languagePicker">
+				<p>{{ __("footer.languages") }} : </p>
+				<a href="{{ url | replace("/fr/", "/en/") }}">en</a>
 				<a href="{{ url | replace("/en/", "/fr/") }}">fr</a>
-			</p>
+			</div>
+			<div id="languageButton">
+				<i class="fas fa-globe"></i>
+			</div>
 		</div>
 
 
