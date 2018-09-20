@@ -9,7 +9,7 @@ module.exports = async function (req, res) {
 	// item in the header navigation.
 	locals.section = 'news';
 
-	locals.news = await keystone.list('News').model.find({ state: 'published', locale: req.params.lang, tags: req.params.tag }).sort('-publishedAt').exec();
+	locals.news = await keystone.list('News').model.find({ state: 'published', locale: req.params.lang, tags: req.params.tag }).populate('author').sort('-publishedAt').exec();
 
 	view.render('news');
 };
