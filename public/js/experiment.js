@@ -23,13 +23,13 @@ $(document).ready(function () {
 		$.post('/api/experiment/count', {
 			interesting, experiment,
 		}, function (res) {
-			$('#bar').css({ width: (res.true / (res.true + res.false)) * 100 + '%' });
+			$('#bar').css({ transform: `rotate(${90 - 180 * (res.true / (res.true + res.false))}deg)` });
 		});
 	}
 
 	setInterval(function () {
 		$.get('/api/experiment/count', function (res) {
-			$('#bar').css({ width: (res.true / (res.true + res.false)) * 100 + '%' });
+			$('#bar').css({ transform: `rotate(${90 - 180 * (res.true / (res.true + res.false))}deg)` });
 		});
 	}, 1000 * 60 * 10); // every 10 minutes
 });
