@@ -32,8 +32,8 @@ exports.initLocals = function (req, res, next) {
  */
 exports.i18n = function (req, res, next) {
 	i18n.setLocale(req, req.params.lang, false);
-	res.locals.__ = res.__ = function () {
-		return i18n.__.apply(req, arguments);
+	res.locals.__ = res.__ = function (...args) {
+		return i18n.__.call(req, ...args);
 	};
 	let moment = require('moment');
 	moment.locale(req.params.lang);

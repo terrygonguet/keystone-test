@@ -3,17 +3,21 @@
 {% block content %}
 
 <div id="newsContainer">
-	<div id="TheReaderWrapper" data-default-news="{{ defaultNews }}">
-		<h3 id="readerName"></h3>
-		<ul id="tagsList"></ul>
-		<h5>{{ __("news.published") }} : <span id="readerPublished"></span></h5>
-		<div class="articleContent activeArticle" id="readerContent"></div>
-		<a id="authorName" href="contact">{{ __("news.by") }} <span id="readerAuthor"></span></a>
+	<div id="TheReaderWrapper">
+		<h3 id="readerName">{{ defaultNews.name }}</h3>
+		<ul id="tagsList">
+			{% for tag in defaultNews.tags %}
+				<li><a href="news/tags/{{ tag }}" data-tag="{{ tag }}" class="{{ "selectedTag" if tag == currentTag else "" }}">{{ tag }}</a></li>
+			{% endfor %}
+		</ul>
+		<h5>{{ __("news.published") }} : <span id="readerPublished">{{ defaultNews._.publishedAt.format('Do MMM YYYY') if defaultNews._ else "-" }}</span></h5>
+		<div class="articleContent activeArticle" id="readerContent">{{ defaultNews.content | safe }}</div>
+		<a id="authorName" href="contact">{{ __("news.by") }} <span id="readerAuthor">{{ defaultNews.author.name.full if defaultNews.author else "Anonymous" }}</span></a>
 	</div>
 	<div id="newsList">
 		{% for article in news %}
 			{# select default article if defaultNews is defined or if it's the first loop #}
-			<div class="articleWrapper {{ "selected" if (not defaultNews and loop.first) or article._id == defaultNews else "" }}" data-id="{{ article._id }}">
+			<div class="articleWrapper {{ "selected" if defaultNews._id == article._id else "" }}" data-id="{{ article._id }}">
 				<h4>{{ article.name }}</h4>
 				<h5>{{ __("news.published") + " : " + article._.publishedAt.format("Do MMM YYYY") }}</h5>
 				<div class="articleContent">{{ article.synopsis | safe }}</div>

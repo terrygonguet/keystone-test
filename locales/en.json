@@ -34,7 +34,11 @@
 	"news": {
 		"published": "Published",
 		"nonews": "There's no news, sorry.",
-		"by": "By"
+		"by": "By",
+		"notfound": {
+			"name": "News not found",
+			"content": "<p>The news you requested does not appear to exist. We invite you to browse our other news or take a look at <a href=\"science\">our latest experiment</a> or to <a href=\"contact\">contact us</a> about this.</p>"
+		}
 	},
 	"about": {
 		"users": {
@@ -46,7 +50,7 @@
 		"current": "Current experiment",
 		"description": "Description",
 		"origin": "Original site",
-		"interesting?": "is this experiment interesting ?",
+		"interesting?": "Is this experiment interesting ?",
 		"yes": "Yes",
 		"no": "No"
 	}
