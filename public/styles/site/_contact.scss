@@ -10,7 +10,7 @@
 	display: inline-flex;
 	flex-direction: column;
 	background-color: var(--background-dark);
-	color: var(--text-color-dark1);
+	color: var(--text-color-dark);
 	font-size: 1.2em;
 	font-weight: bold;
 	padding: 1em;
@@ -29,7 +29,7 @@
 	button{
 		border: var(--background) solid 0.3em;
 		background-color: var(--background-dark);
-		color: var(--text-color-dark1);
+		color: var(--text-color-dark);
 		font-weight: bold;
 		margin-top: 1em;
 		padding: 0.5em;

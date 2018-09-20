@@ -61,37 +61,8 @@ keystone.set('nav', {
 	news: 'news',
 });
 
-// override render function to load custom filter(s)
-cons.nunjucks.render = function (str, options, fn) {
-	let env = nunjucks.configure('templates/views');
-	env.addFilter('processNewsAsync', async function processNewsAsync (news, locale, cb) {
-		let data = news.map(n => n.toObject());
-
-		// find all the keys to fetch and get them
-		let keys = [];
-		for (let article of data) {
-			article.content && keys.push(article.content);
-		}
-		let nodes = await keystone.list('TextNode').model.find({ language: locale, name: { $in: keys } }).exec();
-
-		// replace fetched content and synopsis in the articles
-		for (let node of nodes) {
-			let article = data.find(a => a.content === node.name);
-			if (article) {
-				article.content = node.content;
-				article.synopsis = node.synopsis;
-				article.name = node.title;
-			}
-		}
-
-		// return data to template engine
-		cb(null, data);
-	}, true);
-	env.renderString(str, options, fn);
-};
 
 // Start Keystone to connect to your database and initialise the web server
-
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	console.log('----------------------------------------'

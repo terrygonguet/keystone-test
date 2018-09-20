@@ -20,6 +20,7 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'navlinks.contact', key: 'contact', fa: 'fas fa-envelope', href: 'contact' },
 		{ label: 'navlinks.about', key: 'about', fa: 'fas fa-address-card', href: 'about' },
 		{ label: 'navlinks.news', key: 'news', fa: 'fas fa-newspaper', href: 'news' },
+		{ label: 'navlinks.experiment', key: 'experiment', fa: 'fas fa-flask', href: 'science' },
 	];
 	res.locals.user = req.user;
 	res.locals.url = req.originalUrl;

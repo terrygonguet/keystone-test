@@ -1,0 +1,97 @@
+/*CSS for Home Page*/
+#ExperimentContainer {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 5vh auto;
+	grid-gap: 0.5em;
+	height: 100%;
+
+	#interestometer {
+		background: var(--background-dark);
+		color: var(--text-color-dark);
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+
+		a {
+			color: var(--text-color-dark);
+		}
+
+		a:hover {
+			color: var(--accent-color);
+		}
+
+		#name {
+			font-weight: bold;
+			font-size: 2em;
+		}
+
+		#question {
+			display: flex;
+			align-items: center;
+
+			#meter {
+				width: 200px;
+				height: 1.2em;
+				background: var(--background);
+				color: var(--text-color);
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-left: 1em;
+				position: relative;
+
+				#bar {
+					position: relative;
+					background: var(--text-color-dark2);
+					height: 100%;
+				}
+
+				span {
+					margin: 2px;
+					font-weight: bold;
+					cursor: pointer;
+					user-select: none;
+					-ms-user-select: none;
+					-moz-user-select: none;
+					-webkit-user-select: none;
+					position: absolute;
+				}
+
+				#btnYes {
+					color: var(--text-color-dark);
+					left: 0;
+				}
+
+				#btnNo {
+					right: 0;
+				}
+			}
+		}
+	}
+
+	#experiment {
+		border: none;
+	}
+
+	#popup {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(0,0,0,0.5);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		visibility: hidden;
+		opacity: 0;
+
+		#description {
+			background: var(--background);
+			color: var(--text-color);
+			max-width: 35vw;
+			padding: 2em;
+		}
+	}
+}

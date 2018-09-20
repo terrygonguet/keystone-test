@@ -3,15 +3,15 @@
 		"home": "Home",
 		"contact": "Contact",
 		"about": "Nous: le bon goût",
-		"news": "Niouzes"
+		"news": "Niouzes",
+		"experiment": "Expérimentation"
 	},
 	"footer": {
 		"powered": "IDB is powered by %s, %s",
 		"open": "Ouvrir Keystone",
 		"signout": "Se déconnecter",
-		"sigin": "Connection",
-		"languages": "Langages",
-		"signin": "footer.signin"
+		"signin": "Connection",
+		"languages": "Langages"
 	},
 	"title": "IDB",
 	"contact": {
@@ -32,7 +32,8 @@
 	},
 	"news": {
 		"published": "Publié le",
-		"nonews": "il n'y a pas de news, désolé."
+		"nonews": "il n'y a pas de news, désolé.",
+		"by": "Par"
 	},
 	"about": {
 		"users": {
@@ -40,5 +41,13 @@
 			"jd@aaa_com": "about.users.jd@aaa_com",
 			"jamesk@lol_com": "about.users.jamesk@lol_com"
 		}
+	},
+	"experiment": {
+		"current": "Expérience en cours",
+		"description": "Description",
+		"origin": "Site original",
+		"interesting?": "Cette expérience est elle interressante ?",
+		"yes": "Oui",
+		"no": "Non"
 	}
 }

@@ -10,6 +10,7 @@ var News = new keystone.List('News');
 News.add({
 	name: { type: Types.Text, required: true, initial: true, label: 'Title' },
 	locale: { type: Types.Text, required: true, initial: true, label: 'Language' },
+	author: { type: Types.Relationship, ref: 'User', many: false },
 	content: { type: Types.Html, wysiwyg: true, initial: false },
 	synopsis: { type: Types.Html, wysiwyg: true, initial: false },
 	tags: { type: Types.TextArray },

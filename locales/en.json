@@ -3,15 +3,15 @@
 		"contact": "Contact",
 		"about": "About",
 		"news": "News",
-		"home": "Home"
+		"home": "Home",
+		"experiment": "Experiment"
 	},
 	"footer": {
 		"powered": "IDB is powered by %s, %s",
 		"open": "Open Keystone",
 		"signout": "Sign Out",
-		"sigin": "Sign In",
-		"languages": "Languages",
-		"signin": "footer.signin"
+		"signin": "Sign In",
+		"languages": "Languages"
 	},
 	"title": "IDB",
 	"contact": {
@@ -33,12 +33,21 @@
 	},
 	"news": {
 		"published": "Published",
-		"nonews": "There's no news, sorry."
+		"nonews": "There's no news, sorry.",
+		"by": "By"
 	},
 	"about": {
 		"users": {
 			"user@keystonejs_com": "about.users.user@keystonejs_com",
 			"jd@aaa_com": "about.users.jd@aaa_com"
 		}
+	},
+	"experiment": {
+		"current": "Current experiment",
+		"description": "Description",
+		"origin": "Original site",
+		"interesting?": "is this experiment interesting ?",
+		"yes": "Yes",
+		"no": "No"
 	}
 }

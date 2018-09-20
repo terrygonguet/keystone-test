@@ -58,6 +58,11 @@ $(document).ready(function () {
 		$('#readerName').text(article.name);
 		$('#readerPublished').text(moment(article.publishedAt).format('Do MMM YYYY'));
 		$('#readerContent').html(article.content);
+		if (article.author) {
+			$('#readerAuthor').text(article.author.name.first + ' ' + article.author.name.last);
+		} else {
+			$('#readerAuthor').text('Anonymous');
+		}
 		$('#TheReaderWrapper').css('color', 'var(--text-color)');
 		$('.tags').empty().append(
 			article.tags.map(t => $(`<li><a href="news/tags/${t}">${t}</a></li>`))

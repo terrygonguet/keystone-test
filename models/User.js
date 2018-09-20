@@ -22,6 +22,10 @@ User.schema.virtual('canAccessKeystone').get(function () {
 	return this.isAdmin;
 });
 
+User.schema.set('toJSON', { transform: function (user) {
+	delete user.password;
+} });
+
 
 /**
  * Registration
