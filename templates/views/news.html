@@ -10,7 +10,7 @@
 				<li><a href="news/tags/{{ tag }}" data-tag="{{ tag }}" class="{{ "selectedTag" if tag == currentTag else "" }}">{{ tag }}</a></li>
 			{% endfor %}
 		</ul>
-		<h5>{{ __("news.published") }} : <span id="readerPublished">{{ defaultNews._.publishedAt.format('Do MMM YYYY') }}</span></h5>
+		<h5>{{ __("news.published") }} : <span id="readerPublished">{{ defaultNews._.publishedAt.format('Do MMM YYYY') if defaultNews._ else "-" }}</span></h5>
 		<div class="articleContent activeArticle" id="readerContent">{{ defaultNews.content | safe }}</div>
 		<a id="authorName" href="contact">{{ __("news.by") }} <span id="readerAuthor">{{ defaultNews.author.name.full if defaultNews.author else "Anonymous" }}</span></a>
 	</div>
