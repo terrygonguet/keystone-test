@@ -3,14 +3,14 @@
 #contactWrapper{
 	display: grid;
 	grid-template-columns: 1fr 2fr;
-	grid-template-areas: "contact animation"
+	grid-template-areas: "contact animation";
 }
 
 .contactForm{
 	display: inline-flex;
 	flex-direction: column;
 	background-color: var(--background-dark);
-	color: var(--text-color-dark);
+	color: var(--text-color-dark);	
 	font-size: 1.2em;
 	font-weight: bold;
 	padding: 1em;
@@ -52,12 +52,11 @@
 	}
 }
 
-
-
 .contactFormWrapper{
 	grid-area: contact;
 	display: inline-flex;
 	flex-direction: column;
+	justify-content: center;
 	padding-right: 10%;
 
 	.introWrapper{

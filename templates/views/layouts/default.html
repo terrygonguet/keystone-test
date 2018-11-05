@@ -28,19 +28,36 @@
 		{% block head %}{% endblock %}
 	</head>
 	<body>
-		<div id="brandWrapper">
-			<i class="fas fa-american-sign-language-interpreting"></i>
-		</div>
-		{# HEADER #}
-		<div id="header">
-			<div role="navigation" id="trainRail">
-				<ul id="navigationList">
-					{% for link in navLinks %}
+		<div id="nav">
+			<div id="brandWrapper">
+				<i class="fas fa-american-sign-language-interpreting"></i>
+			</div>
+			<ul id="navigationList">
+				{% for link in navLinks %}
+				<a href="{{ link.href }}">
 					<li class="{{ 'active' if link.key == section else '' }}">
-						<a class="navItems" href="{{ link.href }}"><i class="{{ link.fa }}"></i>{{ __(link.label) }}</a>
+						<i class="{{ link.fa }}"></i> {{ __(link.label) }}
 					</li>
-					{% endfor %}
-				</ul>
+				</a>
+				{% endfor %}
+			</ul>
+			<div id="footer" class="container">
+				<p>
+					{% if user %}
+					{% if user.canAccessKeystone %}
+					<a class="" href="/keystone">{{ __("footer.open") }}</a>
+					{% endif %}
+					<a class="" href="/keystone/signout">{{ __("footer.signout") }}</a>
+					{% else %}
+					<a class="" href="/keystone/signin">{{ __("footer.signin") }}</a>
+					{% endif %}
+				</p>
+				<p>
+					<a href="{{ url | replace("/fr/", "/en/") }}">en</a>
+					<a href="{{ url | replace("/en/", "/fr/") }}">fr</a>
+				</p>
+				<p>{{ __("footer.powered", "<a href=\"http://keystonejs.com\" target=\"_blank\">KeystoneJS</a>") | safe }}</p>
+				<p>Copyright &copy;<span class="currentYear"></span></p>
 			</div>
 		</div>
 
@@ -58,34 +75,6 @@
 			{% block content %}{% endblock %}
 		</div>
 
-
-		{# FOOTER #}
-		<div id="footer" class="container">
-			<p>
-				{{ __("footer.powered", "<a href=\"http://keystonejs.com\" target=\"_blank\">KeystoneJS</a>", "Copyright &copy;<span class=\"currentYear\"></span>") | safe }}
-				{% if user %}
-					{% if user.canAccessKeystone %}
-						<a class="" href="/keystone">{{ __("footer.open") }}</a>
-					{% endif %}
-					<a class="" href="/keystone/signout">{{ __("footer.signout") }}</a>
-				{% else %}
-					<a class="" href="/keystone/signin">{{ __("footer.signin") }}</a>
-				{% endif %}
-			</p>
-			
-		</div>
-		<div id="languageWrapper">
-			<div id="languagePicker">
-				<p>{{ __("footer.languages") }} : </p>
-				<a href="{{ url | replace("/fr/", "/en/") }}">en</a>
-				<a href="{{ url | replace("/en/", "/fr/") }}">fr</a>
-			</div>
-			<div id="languageButton">
-				<i class="fas fa-globe"></i>
-			</div>
-		</div>
-
-
 		{# JAVASCRIPT #}
 		<script src="/js/jquery/jquery-2.1.4.min.js"></script>
 
@@ -96,7 +85,7 @@
 		{% endif %}
 
 		{# Add scripts that are globally required by your site here. #}
-		<script src="/js/navbar.js"></script>
+		<!-- <script src="/js/navbar.js"></script> -->
 		<script>
 (function () {
 	$(".currentYear").text((new Date()).getFullYear());
@@ -120,6 +109,7 @@
 })();
 		</script>
 {% if moment().format('D M') == '1 4' %}
+		{# randomize colors on April First #}
 		<script src="/js/fun/randomStyle.js"></script>
 {% endif %}
 

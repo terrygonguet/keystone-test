@@ -36,12 +36,9 @@ body {
 	// line-height: 1.42857;
 	color: var(--text-color);
 	display: grid;
-	grid-template-columns: auto 1fr auto;
-	grid-template-rows: auto 1fr auto;
-	grid-template-areas: 
-	"brand header header"
-	"main main main"
-	"footer footer language";
+	grid-template-columns: minmax(150px, 15%) auto;
+	grid-template-rows: auto;
+	grid-template-areas: "nav main";
 
 	background-color: var(--background);
 	padding:0px;
@@ -80,87 +77,12 @@ h2{
 	font-size: 3em;
 }
 
-#languageWrapper{
-	grid-area:language;
-	padding:10px;
-	margin:10px;
-	background-color: var(--background-dark);
-	color: var(--text-color-dark);
-	i{
-		font-size: 3em;
-		color: var(--text-color-dark);
-	}
-	a{
-		color: var(--text-color-dark);
-	}
-}
-
-#languageButton{
-	background-color:var(--background-dark);
-}
-
-#languagePicker{
-}
-
 /*CSS for header + nav bar*/
-#header{
-	grid-area:header;
-	background-color: var(--background-dark);
-	display: inline-flex;
-	align-items: flex-end;
-	padding: 1em;
-
-	a {
-		color: var(--text-color-dark);
-
-		&:hover {
-			color: var(--accent-color);
-		}
-	}
-
-	#trainRail{
-		font-size: 1.3em;
-		width: 100%;
-	}
-
-	#navigationList{
-		display: inline-flex;
-		list-style: none;
-		position: relative;
-		margin: 0;
-		padding: 0;
-
-		li {
-			padding: 0.5em;
-		}
-
-		.active {
-			border: 1px solid var(--text-color-dark);
-		}
-	}
-}
-
-.navItems{
-	i{
-		font-size: 1.2em;
-    margin-right: 5px;
-	}
-}
-
-#bodyContent{
-	padding: 20px;
-	grid-area: main;
-}
-
-/*CSS for footer*/
-#footer {
-	grid-area: footer;
-	color: var(--text-color-dark2);
+#nav {
+	grid-area: nav;
 	background-color: var(--background-dark);
 	padding: 1em;
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-direction: column;
 
 	a {
@@ -169,5 +91,53 @@ h2{
 		&:hover {
 			color: var(--accent-color);
 		}
+	}
+
+	#navigationList{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-size: 1.3em;
+
+		li {
+			padding: 0.5em;
+		}
+
+		.active {
+			border: 1px solid var(--text-color-dark);
+		}
+
+		.navItems {
+			i {
+				font-size: 1.2em;
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+
+#bodyContent{
+	grid-area: main;
+	margin: 1em;
+}
+
+/*CSS for footer*/
+#footer {
+	color: var(--text-color-dark2);
+	background-color: var(--background-dark);
+	margin-top: auto;
+	text-align: center;
+
+	a {
+		color: var(--text-color-dark);
+
+		&:hover {
+			color: var(--accent-color);
+		}
+	}
+
+	p {
+		margin: 0;
 	}
 }
