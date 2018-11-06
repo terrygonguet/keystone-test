@@ -20,19 +20,6 @@ logo.x = logoPos.e(1);
 logo.y = logoPos.e(2);
 stage.addChild(logo);
 
-// function resize () {
-// 	let newDim = {
-// 		w: $('#contactAnim').width(),
-// 		h: $('#contactAnim').height(),
-// 	};
-// 	stage.canvas.width = newDim.w;
-// 	stage.canvas.height = newDim.h;
-// 	users.forEach(u => u.set({ x: u.x / dim.w * newDim.w, y: u.x / dim.h * newDim.h }));
-// 	logoPos = $V([newDim.w * 0.5, newDim.h * 0.5]);
-// 	dim = newDim;
-// }
-// document.addEventListener('resize', resize);
-
 let nbUsers = 15 + Math.floor(Math.random() * 5);
 do {
 	let userPos = $V([
