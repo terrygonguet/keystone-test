@@ -10,7 +10,8 @@ h5{
 #newsContainer{
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	grid-template-rows: minmax(200px,750px);
+	grid-template-rows: minmax(200px, auto);
+	height: 100%;
 }
 
 #TheReaderWrapper{

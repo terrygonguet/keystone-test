@@ -7,7 +7,7 @@
 		"experiment": "Experiment"
 	},
 	"footer": {
-		"powered": "IDB is powered by %s, %s",
+		"powered": "IDB is powered by %s",
 		"open": "Open Keystone",
 		"signout": "Sign Out",
 		"signin": "Sign In",
