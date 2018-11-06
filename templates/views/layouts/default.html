@@ -2,118 +2,122 @@
 
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<base href="/{{ locale }}/">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>{{ title|default(section)|capitalize + " - " + __("title") }}</title>
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<base href="/{{ locale }}/">
 
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-		<link href="/styles/site.css" rel="stylesheet">
+	<title>{{ title|default(section)|capitalize + " - " + __("title") }}</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-		{# This file provides the default styling for the KeystoneJS Content Editor #}
-		{% if user and user.canAccessKeystone %}
-			<link href="/keystone/styles/content/editor.min.css" rel="stylesheet">
-		{% endif %}
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	 crossorigin="anonymous">
+	<link href="/styles/site.css" rel="stylesheet">
+
+	{# This file provides the default styling for the KeystoneJS Content Editor #}
+	{% if user and user.canAccessKeystone %}
+	<link href="/keystone/styles/content/editor.min.css" rel="stylesheet">
+	{% endif %}
 
 
-		{# Include template-specific stylesheets by extending the css block #}
-		{% block css %}{% endblock %}
+	{# Include template-specific stylesheets by extending the css block #}
+	{% block css %}{% endblock %}
 
-		{# Add any other template-specific HEAD tags by extending the head block #}
-		{% block head %}{% endblock %}
-	</head>
-	<body>
-		<div id="nav">
-			<div id="brandWrapper">
-				<i class="fas fa-american-sign-language-interpreting"></i>
-			</div>
-			<ul id="navigationList">
-				{% for link in navLinks %}
-				<a href="{{ link.href }}">
-					<li class="{{ 'active' if link.key == section else '' }}">
-						<i class="{{ link.fa }}"></i> {{ __(link.label) }}
-					</li>
-				</a>
-				{% endfor %}
-			</ul>
-			<div id="footer" class="container">
-				<p>
-					{% if user %}
-					{% if user.canAccessKeystone %}
-					<a class="" href="/keystone">{{ __("footer.open") }}</a>
-					{% endif %}
-					<a class="" href="/keystone/signout">{{ __("footer.signout") }}</a>
-					{% else %}
-					<a class="" href="/keystone/signin">{{ __("footer.signin") }}</a>
-					{% endif %}
-				</p>
-				<p>
-					<a href="{{ url | replace("/fr/", "/en/") }}">en</a>
-					<a href="{{ url | replace("/en/", "/fr/") }}">fr</a>
-				</p>
-				<p>{{ __("footer.powered", "<a href=\"http://keystonejs.com\" target=\"_blank\">KeystoneJS</a>") | safe }}</p>
-				<p>Copyright &copy;<span class="currentYear"></span></p>
-			</div>
+	{# Add any other template-specific HEAD tags by extending the head block #}
+	{% block head %}{% endblock %}
+</head>
+
+<body>
+	<div id="nav">
+		<div id="brandWrapper">
+			<i class="fas fa-american-sign-language-interpreting"></i>
 		</div>
-
-		{# BODY #}
-		<div id="bodyContent">
-
-			{# The Intro block appears above flash messages (used for temporary information display) #}
-			{% block intro %}{% endblock %}
-
-			{# Flash messages allow you to display once-off status messages to users, e.g. form
-			   validation errors, success messages, etc. #}
-			{{ FM.flashMessages(messages) }}
-
-			{# The content block should contain the body of your template"s content #}
-			{% block content %}{% endblock %}
+		<ul id="navigationList">
+			{% for link in navLinks %}
+			<a href="{{ link.href }}">
+				<li class="{{ 'active' if link.key == section else '' }}">
+					<i class="{{ link.fa }}"></i> {{ __(link.label) }}
+				</li>
+			</a>
+			{% endfor %}
+		</ul>
+		<div id="footer" class="container">
+			<p>
+				{% if user %}
+				{% if user.canAccessKeystone %}
+				<a class="" href="/keystone">{{ __("footer.open") }}</a>
+				{% endif %}
+				<a class="" href="/keystone/signout">{{ __("footer.signout") }}</a>
+				{% else %}
+				<a class="" href="/keystone/signin">{{ __("footer.signin") }}</a>
+				{% endif %}
+			</p>
+			<p>
+				<a href="{{ url | replace("/fr/", "/en/") }}">en</a>
+				<a href="{{ url | replace("/en/", "/fr/") }}">fr</a>
+			</p>
+			<p>{{ __("footer.powered", "<a href=\"http://keystonejs.com\" target=\"_blank\">KeystoneJS</a>") | safe }}</p>
+			<p>Copyright &copy;<span class="currentYear"></span></p>
 		</div>
+	</div>
 
-		{# JAVASCRIPT #}
-		<script src="/js/jquery/jquery-2.1.4.min.js"></script>
+	{# BODY #}
+	<div id="bodyContent">
 
-		{# The KeystoneJS Content Editor provides support for ks-editable data attributes,
-			which generate links to edit content for users who can access Keystone #}
-		{% if user and user.canAccessKeystone %}
-			<script src="/keystone/js/content/editor.js"></script>
-		{% endif %}
+		{# The Intro block appears above flash messages (used for temporary information display) #}
+		{% block intro %}{% endblock %}
 
-		{# Add scripts that are globally required by your site here. #}
-		<!-- <script src="/js/navbar.js"></script> -->
-		<script>
-(function () {
-	$(".currentYear").text((new Date()).getFullYear());
-	let keys = "";
-	let codes = {
-		konami: 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba',
-		editor: 'pimpme',
-		'fun/randomStyle': 'réforme',
-	}
-	document.addEventListener('keydown', function (e) {
-		keys += e.key;
-		for(let code in codes) {
-			if (keys.endsWith(codes[code])) {
-				let script = document.createElement('script');
-				script.src = `/js/${code}.js`;
-				document.head.appendChild(script);
+		{# Flash messages allow you to display once-off status messages to users, e.g. form
+		validation errors, success messages, etc. #}
+		{{ FM.flashMessages(messages) }}
+
+		{# The content block should contain the body of your template"s content #}
+		{% block content %}{% endblock %}
+	</div>
+
+	{# JAVASCRIPT #}
+	<script src="/js/jquery/jquery-2.1.4.min.js"></script>
+
+	{# The KeystoneJS Content Editor provides support for ks-editable data attributes,
+	which generate links to edit content for users who can access Keystone #}
+	{% if user and user.canAccessKeystone %}
+	<script src="/keystone/js/content/editor.js"></script>
+	{% endif %}
+
+	{# Add scripts that are globally required by your site here. #}
+	<!-- <script src="/js/navbar.js"></script> -->
+	<script>
+		(function () {
+			$(".currentYear").text((new Date()).getFullYear());
+			let keys = "";
+			let codes = {
+				konami: 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba',
+				editor: 'pimpme',
+				'fun/randomStyle': 'réforme',
 			}
-			keys = keys.substring((keys.length > 100 ? keys.length - 100 : 0));
-		}
-	});
-})();
-		</script>
-{% if moment().format('D M') == '1 4' %}
-		{# randomize colors on April First #}
-		<script src="/js/fun/randomStyle.js"></script>
-{% endif %}
+			document.addEventListener('keydown', function (e) {
+				keys += e.key;
+				for (let code in codes) {
+					if (keys.endsWith(codes[code])) {
+						let script = document.createElement('script');
+						script.src = `/js/${code}.js`;
+						document.head.appendChild(script);
+					}
+					keys = keys.substring((keys.length > 100 ? keys.length - 100 : 0));
+				}
+			});
+		})();
+	</script>
+	{% if moment().format('D M') == '1 4' %}
+	{# randomize colors on April First #}
+	<script src="/js/fun/randomStyle.js"></script>
+	{% endif %}
 
-		{# Include template-specific javascript files by extending the js block #}
-		{% block js %}{% endblock %}
-	</body>
+	{# Include template-specific javascript files by extending the js block #}
+	{% block js %}{% endblock %}
+</body>
+
 </html>

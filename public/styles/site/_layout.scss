@@ -1,9 +1,8 @@
 /*Importing font here*/
 // @import url('https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans');
 
-
-html{
-	padding:0px;
+html {
+	padding: 0px;
 	margin: 0px;
 	height: 100%;
 }
@@ -17,17 +16,17 @@ html{
 
 /* Track */
 ::-webkit-scrollbar-track {
-	background: var(--background); 
+	background: var(--background);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: var(--text-color-dark2); 
+	background: var(--text-color-dark2);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--accent-color); 
+	background: var(--accent-color);
 }
 
 body {
@@ -41,26 +40,27 @@ body {
 	grid-template-areas: "nav main";
 
 	background-color: var(--background);
-	padding:0px;
+	padding: 0px;
 	margin: 0px;
 	height: 100%;
 }
 
 a {
-	color:var(--text-color);
+	color: var(--text-color);
 	font-weight: bold;
 	text-decoration: none;
 
-	&:hover, &:visited:hover {
+	&:hover,
+	&:visited:hover {
 		color: var(--accent-color);
 	}
 
 	&:visited {
-		color:var(--text-color);
+		color: var(--text-color);
 	}
 }
 
-h2{
+h2 {
 	color: var(--text-color-dark);
 	font-weight: bolder;
 	display: inline-block;
@@ -68,10 +68,10 @@ h2{
 	font-size: 2.2em;
 }
 
-#brandWrapper{
-	grid-area:brand;
-	padding:10px;
-	margin:10px;
+#brandWrapper {
+	grid-area: brand;
+	padding: 10px;
+	margin: 10px;
 	background-color: var(--background-dark);
 	color: var(--text-color-dark);
 	font-size: 3em;
@@ -93,7 +93,7 @@ h2{
 		}
 	}
 
-	#navigationList{
+	#navigationList {
 		list-style: none;
 		margin: 0;
 		padding: 0;
@@ -116,8 +116,7 @@ h2{
 	}
 }
 
-
-#bodyContent{
+#bodyContent {
 	grid-area: main;
 	margin: 1em;
 }

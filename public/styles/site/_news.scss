@@ -1,40 +1,40 @@
-h4{
+h4 {
 	font-size: 1.2em;
 	margin: 0px 0px 5px 0px;
 }
 
-h5{
+h5 {
 	margin: 0px 0px 0.5em 0.5em;
 }
 
-#newsContainer{
+#newsContainer {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	grid-template-rows: minmax(200px, auto);
 	height: 100%;
 }
 
-#TheReaderWrapper{
+#TheReaderWrapper {
 	background-color: var(--background-light);
 	padding: 1em;
 
-	h3{
+	h3 {
 		font-size: 2em;
 		margin: 5px;
 	}
 }
 
-#readerContent{
+#readerContent {
 	border-top: solid var(--accent-color);
 	border-bottom: solid var(--accent-color);
 }
 
-.articleWrapper{
+.articleWrapper {
 	background-color: var(--background-dark);
 	color: var(--text-color-dark);
 	padding: 20px;
-	margin-bottom:10px;
-	margin-left:30px;
+	margin-bottom: 10px;
+	margin-left: 30px;
 	cursor: pointer;
 	transition: margin-left 0.35s;
 }
@@ -43,45 +43,45 @@ h5{
 	margin-left: 0;
 }
 
-.articleWrapper:hover{
+.articleWrapper:hover {
 	margin-left: 0px;
 }
 
-#newsList{
+#newsList {
 	overflow: auto;
 	grid-column-start: -2;
 }
 
-#tagsList{
+#tagsList {
 	list-style: none;
 	display: inline-flex;
 
-	a{
+	a {
 		background-color: var(--background-dark);
-    color: var(--text-color-dark);
+		color: var(--text-color-dark);
 		padding: 0.5em;
 		margin-right: 15px;
 	}
 
-	a:hover{
-		background-color:  var(--background);
-    color: var(--text-color);
-		border: solid 2px  var(--background-dark);
+	a:hover {
+		background-color: var(--background);
+		color: var(--text-color);
+		border: solid 2px var(--background-dark);
 		margin-right: 11px;
 	}
 
-	a:active{
+	a:active {
 		background-color: var(--background-dark);
-    color: var(--text-color-dark);
+		color: var(--text-color-dark);
 		padding: 0.5em;
 		margin-right: 15px;
-		border:none;
+		border: none;
 	}
-	.selectedTag{
+	.selectedTag {
 		color: var(--accent-color);
 	}
 }
 
-#authorName{
-	float:right;
+#authorName {
+	float: right;
 }

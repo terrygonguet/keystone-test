@@ -1,61 +1,61 @@
 {% extends "layouts/default.html" %}
 
 {% block intro %}
-<div id = "contactWrapper">
-<div class="contactFormWrapper">
-	<div class="introWrapper">
+<div id="contactWrapper">
+	<div class="contactFormWrapper">
+		<div class="introWrapper">
 			<h2 class="introTitle">{{__("contact.title")}}</h2>
-	</div>
-{% endblock %}
+		</div>
+		{% endblock %}
 
-{% block content %}
-	
-			<div id="ListenToUsInContact">
-				{{ __("contact.hook")|safe }}
-			</div>
+		{% block content %}
+
+		<div id="ListenToUsInContact">
+			{{ __("contact.hook")|safe }}
+		</div>
 		{% if enquirySubmitted %}
-			<h3>{{ __("contact.thanks") }}</h3>
+		<h3>{{ __("contact.thanks") }}</h3>
 		{% else %}
-			<form method="post" class="contactForm">
-				<input type="hidden" name="action" value="contact">
+		<form method="post" class="contactForm">
+			<input type="hidden" name="action" value="contact">
 
-				{% set class = ( "has-error" if validationErrors.name else "" ) %}
-				<div class="form-group {{ class }}"></div>
-				<span>{{ __("contact.name") }}</span>
-				<input type="text" name="name.full" value="{{ formData["name.full"] }}" class="form-control">
+			{% set class = ( "has-error" if validationErrors.name else "" ) %}
+			<div class="form-group {{ class }}"></div>
+			<span>{{ __("contact.name") }}</span>
+			<input type="text" name="name.full" value="{{ formData["name.full"] }}" class="form-control">
 
-				{% set class = ( "has-error" if validationErrors.email else "" ) %}
-				<div class="form-group {{ class }}"></div>
-				<span>{{ __("contact.email") }}</span>
-				<input type="email" name="email" value="{{ formData.email }}" class="form-control">
-				
-				<div class="form-group"></div>
-				<span>{{ __("contact.phone") }}</span>
-				<input type="text" name="phone" value="{{ formData.phone }}" placeholder="{{ __("contact.optional") }}" class="form-control">
-				
-				{% set class = ( "has-error" if validationErrors.enquiryType else "" ) %}
-				<div class="form-group {{ class }}"></div>
-				<span>{{ __("contact.whatabout") }}</span>
-				<select name="enquiryType" class="form-control">
+			{% set class = ( "has-error" if validationErrors.email else "" ) %}
+			<div class="form-group {{ class }}"></div>
+			<span>{{ __("contact.email") }}</span>
+			<input type="email" name="email" value="{{ formData.email }}" class="form-control">
+
+			<div class="form-group"></div>
+			<span>{{ __("contact.phone") }}</span>
+			<input type="text" name="phone" value="{{ formData.phone }}" placeholder="{{ __("contact.optional") }}" class="form-control">
+
+			{% set class = ( "has-error" if validationErrors.enquiryType else "" ) %}
+			<div class="form-group {{ class }}"></div>
+			<span>{{ __("contact.whatabout") }}</span>
+			<select name="enquiryType" class="form-control">
 				<option value="">{{ __("contact.choose") }}</option>
 				{% for type in enquiryTypes %}
-					{% set selected = ( 'selected="selected"' if formData.enquiryType == type.value else "" ) %}
-					<option value="{{type.value}}" {{ selected }}>{{ __("contact." + type.label) }}</option>
+				{% set selected = ( 'selected="selected"' if formData.enquiryType == type.value else "" ) %}
+				<option value="{{type.value}}" {{ selected }}>{{ __("contact." + type.label) }}</option>
 				{% endfor %}
-				</select>
-				
-				{% set class = ( "has-error" if validationErrors.message else "" ) %}
-				<div class="form-group {{ class }}"></div>
-				<span>{{ __("contact.message") }}</span>
-				<textarea name="message" placeholder="{{ __("contact.leavemessage") }}" rows="4" class="form-control">{{ formData.message }}</textarea>
-				
-				<div class="form-actions"></div>
-				<button type="submit" class="btn btn-primary">{{ __("contact.send") }}</button>
-				
-			</form>
+			</select>
+
+			{% set class = ( "has-error" if validationErrors.message else "" ) %}
+			<div class="form-group {{ class }}"></div>
+			<span>{{ __("contact.message") }}</span>
+			<textarea name="message" placeholder="{{ __("contact.leavemessage") }}" rows="4" class="form-control">{{ formData.message }}</textarea>
+
+			<div class="form-actions"></div>
+			<button type="submit" class="btn btn-primary">{{ __("contact.send") }}</button>
+
+		</form>
 		{% endif %}
 	</div>
-	<div class = "contactAnimWrapper">
+	<div class="contactAnimWrapper">
 		<canvas id="contactAnim"></canvas>
 	</div>
 </div>

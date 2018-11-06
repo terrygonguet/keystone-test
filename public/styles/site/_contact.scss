@@ -1,32 +1,34 @@
 /*CSS for contact*/
 
-#contactWrapper{
+#contactWrapper {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	grid-template-areas: "contact animation";
 }
 
-.contactForm{
+.contactForm {
 	display: inline-flex;
 	flex-direction: column;
 	background-color: var(--background-dark);
-	color: var(--text-color-dark);	
+	color: var(--text-color-dark);
 	font-size: 1.2em;
 	font-weight: bold;
 	padding: 1em;
-	
-	input, textarea, select{
+
+	input,
+	textarea,
+	select {
 		border: none;
 		background-color: var(--background);
 		padding: 0.3em;
 		margin-bottom: 0.4em;
 	}
 
-	select{
+	select {
 		cursor: pointer;
 	}
 
-	button{
+	button {
 		border: var(--background) solid 0.3em;
 		background-color: var(--background-dark);
 		color: var(--text-color-dark);
@@ -38,56 +40,55 @@
 		cursor: pointer;
 	}
 
-	button:hover{
-		width: -webkit-fill-available;;
+	button:hover {
+		width: -webkit-fill-available;
 	}
 
-	button:active{
+	button:active {
 		background-color: var(--background);
 		color: var(--text-color);
 	}
 
-	span{
+	span {
 		margin-bottom: 0.2em;
 	}
 }
 
-.contactFormWrapper{
+.contactFormWrapper {
 	grid-area: contact;
 	display: inline-flex;
 	flex-direction: column;
 	justify-content: center;
 	padding-right: 10%;
 
-	.introWrapper{
+	.introWrapper {
 		background-color: white;
 		clip-path: polygon(90% 0, 95% 15%, 100% 95%, 100% 100%, 0 100%, 0% 0);
 	}
 
-	#ListenToUsInContact{
+	#ListenToUsInContact {
 		padding-left: 1em;
 		background-color: white;
 	}
 
-	h2{
+	h2 {
 		background: var(--background-dark);
 	}
 }
 
-#flash-messages{
-
+#flash-messages {
 	background-color: #111111;
 	color: #e0e0e0;
 	padding: 0.5em;
 
-	h5{
-		color:var(--accent-color);
+	h5 {
+		color: var(--accent-color);
 		font-size: 1em;
 		margin: unset;
 	}
 }
 
-.contactAnimWrapper{
+.contactAnimWrapper {
 	grid-area: animation;
 }
 
