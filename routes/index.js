@@ -18,40 +18,39 @@
  * http://expressjs.com/api.html#app.VERB
  */
 
-var keystone = require('keystone');
-var middleware = require('./middleware');
-var importRoutes = keystone.importer(__dirname);
+var keystone = require("keystone")
+var middleware = require("./middleware")
+var importRoutes = keystone.importer(__dirname)
 
 // Common Middleware
-keystone.pre('routes', middleware.initLocals);
-keystone.pre('render', middleware.flashMessages);
-keystone.pre('render', middleware.i18n);
+keystone.pre("routes", middleware.initLocals)
+keystone.pre("render", middleware.flashMessages)
+keystone.pre("render", middleware.i18n)
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views'),
-	guessLanguage: require('./guessLanguage'),
-	api: importRoutes('./api'),
-};
+	views: importRoutes("./views"),
+	guessLanguage: require("./guessLanguage"),
+	api: importRoutes("./api"),
+}
 
 // Setup Route Bindings
-module.exports = function (app) {
-	app.get('/', routes.guessLanguage); // decide what language to serve
+module.exports = function(app) {
+	app.get("/", routes.guessLanguage) // decide what language to serve
 
 	// Views
-	app.get('/:lang/', routes.views.index);
-	app.get('/:lang/contact', routes.views.contact);
-	app.get('/:lang/about', routes.views.about);
-	app.get('/:lang/news', routes.views.news);
-	app.get('/:lang/science', routes.views.experiment);
+	app.get("/:lang/", routes.views.index)
+	app.get("/:lang/contact", routes.views.contact)
+	app.get("/:lang/about", routes.views.about)
+	app.get("/:lang/news", routes.views.news)
+	app.get("/:lang/science", routes.views.experiment)
 
 	// news
-	app.get('/:lang/news/:id', routes.views.news);
-	app.get('/:lang/news/tags/:tag', routes.views.tags);
+	app.get("/:lang/news/:id", routes.views.news)
+	app.get("/:lang/news/tags/:tag", routes.views.tags)
 	// experiment
-	app.all('/api/experiment/count', routes.api.experiment);
+	app.all("/api/experiment/count", routes.api.experiment)
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
-
-};
+}

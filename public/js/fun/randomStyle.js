@@ -1,23 +1,23 @@
-(function () {
+;(function() {
 	let vars = [
-		'text-color',
-		'text-color-dark',
-		'text-color-dark2',
-		'background',
-		'background-dark',
-		'background-light',
-		'accent-color',
-	];
-	let colors = {};
+		"text-color",
+		"text-color-dark",
+		"text-color-dark2",
+		"background",
+		"background-dark",
+		"background-light",
+		"accent-color",
+	]
+	let colors = {}
 
 	for (let cssvar of vars) {
-		let color = `rgb(${rand()}, ${rand()}, ${rand()})`;
-		document.documentElement.style.setProperty(`--${cssvar}`, color);
-		colors[cssvar] = color;
+		let color = `rgb(${rand()}, ${rand()}, ${rand()})`
+		document.documentElement.style.setProperty(`--${cssvar}`, color)
+		colors[cssvar] = color
 	}
-	console.log(colors);
+	console.log(colors)
 
-	function rand () {
-		return Math.floor(Math.random() * 255);
+	function rand() {
+		return Math.floor(Math.random() * 255)
 	}
-})();
+})()
