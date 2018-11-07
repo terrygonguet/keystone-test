@@ -46,10 +46,12 @@
 		</ul>
 		<div id="footer" class="container">
 			<p>
-				{% if user %}
-				{% if user.canAccessKeystone %}
+				{% if user and user.canAccessKeystone %}
 				<a class="" href="/keystone">{{ __("footer.open") }}</a>
 				{% endif %}
+			</p>
+			<p>
+				{% if user %}
 				<a class="" href="/keystone/signout">{{ __("footer.signout") }}</a>
 				{% else %}
 				<a class="" href="/keystone/signin">{{ __("footer.signin") }}</a>

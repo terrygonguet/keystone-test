@@ -39,13 +39,6 @@
 			"content": "<p>L'article demandé est introuvable. Nous vous invitons à lire nos autres articles, inspecter <a href=\"science\">notre expérience en cours</a> ou de <a href=\"contact\">nous contacter</a>.</p>"
 		}
 	},
-	"about": {
-		"users": {
-			"user@keystonejs_com": "about.users.user@keystonejs_com",
-			"jd@aaa_com": "about.users.jd@aaa_com",
-			"jamesk@lol_com": "about.users.jamesk@lol_com"
-		}
-	},
 	"experiment": {
 		"current": "Expérience en cours",
 		"description": "Description",

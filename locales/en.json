@@ -40,12 +40,6 @@
 			"content": "<p>The news you requested does not appear to exist. We invite you to browse our other news or take a look at <a href=\"science\">our latest experiment</a> or to <a href=\"contact\">contact us</a> about this.</p>"
 		}
 	},
-	"about": {
-		"users": {
-			"user@keystonejs_com": "about.users.user@keystonejs_com",
-			"jd@aaa_com": "about.users.jd@aaa_com"
-		}
-	},
 	"experiment": {
 		"current": "Current experiment",
 		"description": "Description",

@@ -1,6 +1,6 @@
 var keystone = require("keystone")
 
-exports = module.exports = function(req, res) {
+exports = module.exports = async function(req, res) {
 	var view = new keystone.View(req, res)
 	var locals = res.locals
 
@@ -8,13 +8,10 @@ exports = module.exports = function(req, res) {
 	// item in the header navigation.
 	locals.section = "about"
 
-	keystone
-		.list("User")
-		.model.find()
-		.exec(function(err, users) {
-			if (err) throw err
-			locals.users = users
-			// Render the view
-			view.render("about")
-		})
+	locals.descriptions = await keystone
+		.list("UserDescription")
+		.model.find({ locale: req.params.lang })
+		.populate("user")
+
+	view.render("about")
 }
