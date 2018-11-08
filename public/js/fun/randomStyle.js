@@ -11,13 +11,18 @@
 	let colors = {}
 
 	for (let cssvar of vars) {
-		let color = `rgb(${rand()}, ${rand()}, ${rand()})`
+		let color = randColor()
 		document.documentElement.style.setProperty(`--${cssvar}`, color)
 		colors[cssvar] = color
 	}
 	console.log(colors)
 
-	function rand() {
-		return Math.floor(Math.random() * 255)
+	function randColor() {
+		let randHex = () =>
+			Math.floor(Math.random() * 255)
+				.toString(16)
+				.padStart(2, "0")
+				.toUpperCase()
+		return `#${randHex()}${randHex()}${randHex()}`
 	}
 })()
