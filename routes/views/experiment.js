@@ -22,13 +22,11 @@ module.exports = async function(req, res) {
 	// item in the header navigation.
 	locals.section = "experiment"
 	locals.experiment = {
-		url: "https://isterryawake.gonguet.com/",
-		title: "Is Terry Awake ?",
+		url: "https://terry.gonguet.com/naga",
+		title: "Project Naga",
 		description: {
-			en:
-				"A simple website to tell if Terry is currently awake (which is sometimes surprizing).",
-			fr:
-				"Un site simple pour voir si Terry est réveillé en direct (ce qui est des fois surprenant).",
+			en: "Snake, but it's a roguelike dungeon crawler. Nuff said.",
+			fr: "Snake, mais c'est un dungeon crawler roguelike. C'est tout.",
 		},
 	}
 	locals.counts = data
