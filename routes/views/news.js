@@ -14,7 +14,6 @@ module.exports = async function(req, res) {
 		.model.find({ state: "published", locale: req.params.lang })
 		.sort("-publishedAt")
 		.populate("author")
-		.exec()
 
 	let id = req.params.id
 	i18n.setLocale(res, req.params.lang)

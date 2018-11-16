@@ -10,7 +10,7 @@ exports = module.exports = async function(req, res) {
 
 	locals.descriptions = await keystone
 		.list("UserDescription")
-		.model.find({ locale: req.params.lang })
+		.model.find({ locale: req.params.lang, showInAbout: true })
 		.populate("user")
 
 	view.render("about")

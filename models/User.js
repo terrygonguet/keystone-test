@@ -25,7 +25,11 @@ User.add(
 	},
 	"About",
 	{
-		photo: { type: Types.CloudinaryImage, publicID: "profilePhoto" },
+		photo: {
+			type: Types.CloudinaryImage,
+			autoCleanup: true,
+			folder: "keystone/users/photo",
+		},
 	}
 )
 

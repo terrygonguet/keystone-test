@@ -17,4 +17,5 @@ Interestometer.add({
  * Registration
  */
 Interestometer.hidden = true
+Interestometer.defaultColumns = "submitedAt, interesting"
 Interestometer.register()

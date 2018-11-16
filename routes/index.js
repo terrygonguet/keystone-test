@@ -44,6 +44,7 @@ module.exports = function(app) {
 	app.get("/:lang/about", routes.views.about)
 	app.get("/:lang/news", routes.views.news)
 	app.get("/:lang/science", routes.views.experiment)
+	app.get("/:lang/artist/:key", routes.views.artist)
 
 	// news
 	app.get("/:lang/news/:id", routes.views.news)

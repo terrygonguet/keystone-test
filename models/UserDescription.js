@@ -20,11 +20,12 @@ UserDescription.add({
 		initial: true,
 		label: "Language",
 	},
-	description: { type: Types.Html, wysiwig: true },
+	description: { type: Types.Html, wysiwyg: true },
+	showInAbout: { type: Types.Boolean, default: false },
 })
 
 /**
  * Registration
  */
-UserDescription.defaultColumns = "user, locale"
+UserDescription.defaultColumns = "user, locale, showInAbout"
 UserDescription.register()

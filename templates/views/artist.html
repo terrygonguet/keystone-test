@@ -1,0 +1,8 @@
+{% extends "layouts/default.html" %} {% block content %}
+<div class="aboutContainer">
+	<div>{{ description.description | safe }}</div>
+	{% for image in gallery.images %}
+		<img src="{{ image.secure_url }}" /> 
+	{% endfor %}
+</div>
+{% endblock %}

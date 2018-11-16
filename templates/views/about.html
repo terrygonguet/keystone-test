@@ -6,7 +6,7 @@
 			{{ description.user._.photo.tag({ mode: "fit", width: 300 }) | safe }}
 		</div>
 		<h3 class="cardName">{{ description.user.name.full }}</h3>
-		<p class="cardDescription">{{ description.description | safe }}</p>
+		<div class="cardDescription">{{ description.description | safe }}</div>
 	</div>
 	{% endfor %}
 </div>

@@ -17,7 +17,6 @@ module.exports = async function(req, res) {
 		})
 		.populate("author")
 		.sort("-publishedAt")
-		.exec()
 
 	locals.currentTag = req.params.tag
 	locals.defaultNews = locals.news[0]
