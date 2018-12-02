@@ -1,0 +1,28 @@
+/*Card CSS for about module*/
+
+.artistContainer {
+	display: flex;
+	flex-direction: column;
+
+	#pictures {
+		.sizer,
+		.picture {
+			width: calc((100% - 2rem) / 3);
+		}
+
+		.gutter {
+			width: 1rem;
+		}
+
+		.picture {
+			margin-bottom: 1rem;
+			border-radius: 5px;
+		}
+	}
+
+	#pictures:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}

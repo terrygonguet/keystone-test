@@ -1,5 +1,3 @@
-
-
 // The easiest way to customise Bootstrap variables while
 // being able to easily override the source files with new
 // versions is to override the ones you want in another file.
@@ -8,7 +6,6 @@
 // use in your site stylesheets.
 
 @import "site/variables";
-
 
 // Site Styles
 // ===========
@@ -20,3 +17,4 @@
 @import "site/about";
 @import "site/news";
 @import "site/experiment";
+@import "site/artist";

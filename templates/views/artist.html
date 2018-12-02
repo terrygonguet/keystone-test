@@ -1,8 +1,28 @@
 {% extends "layouts/default.html" %} {% block content %}
-<div class="aboutContainer">
-	<div>{{ description.description | safe }}</div>
-	{% for image in gallery.images %}
-		<img src="{{ image.secure_url }}" /> 
-	{% endfor %}
+<div class="artistContainer">
+	<div id="userDescription">{{ description.description | safe }}</div>
+	<div id="pictures">
+		<div class="sizer"></div>
+		<div class="gutter"></div>
+		{% for image in gallery.images %}
+			<img src="{{image.secure_url}}" class="picture" />
+		{% endfor %}
+	</div>
 </div>
+{% endblock %}
+
+{% block js %}
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script>
+const msnry = new Masonry("#pictures", {
+	itemSelector: ".picture",
+	columnWidth: ".sizer",
+	percentPosition: true,
+	gutter: ".gutter",
+	transitionDuration: 0,
+})
+$("img").on("load", function () {
+	msnry.layout()
+})
+</script>
 {% endblock %}
