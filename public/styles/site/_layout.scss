@@ -35,7 +35,7 @@ body {
 	// line-height: 1.42857;
 	color: var(--text-color);
 	display: grid;
-	grid-template-columns: minmax(150px, 15%) auto;
+	grid-template-columns: max-content auto;
 	grid-template-rows: auto;
 	grid-template-areas: "nav main";
 
@@ -71,7 +71,6 @@ h2 {
 #brandWrapper {
 	grid-area: brand;
 	padding: 10px;
-	margin: 10px;
 	background-color: var(--background-dark);
 	color: var(--text-color-dark);
 	font-size: 3em;
@@ -81,9 +80,11 @@ h2 {
 #nav {
 	grid-area: nav;
 	background-color: var(--background-dark);
-	padding: 1em;
+	padding: 0.5rem;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	line-height: 1.3em;
 
 	a {
 		color: var(--text-color-dark);
@@ -93,14 +94,16 @@ h2 {
 		}
 	}
 
-	#navigationList {
+	.navlist {
 		list-style: none;
 		margin: 0;
+		margin-top: 1rem;
 		padding: 0;
 		font-size: 1.3em;
 
 		li {
 			padding: 0.5em;
+			display: flex;
 		}
 
 		.active {
@@ -118,7 +121,8 @@ h2 {
 
 #bodyContent {
 	grid-area: main;
-	margin: 1em;
+	padding: 1em;
+	overflow-y: auto;
 }
 
 /*CSS for footer*/
@@ -139,4 +143,10 @@ h2 {
 	p {
 		margin: 0;
 	}
+}
+
+.shrink {
+	overflow: hidden;
+	white-space: nowrap;
+	width: 0;
 }
